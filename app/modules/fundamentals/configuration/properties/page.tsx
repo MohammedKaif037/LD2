@@ -479,4 +479,115 @@ public class InfoService {
                       <a 
                         href="https://docs.spring.io/spring-boot/docs/current/javadoc-api/org/springframework/boot/context/properties/ConfigurationProperties.html"
                         className="flex items-center gap-2 text-primary hover:underline"
-                     
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        @ConfigurationProperties API Docs
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Articles & Tutorials</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://www.baeldung.com/spring-boot-external-config"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Baeldung: Externalized Configuration in Spring Boot
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://reflectoring.io/spring-boot-configuration/"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Reflectoring: Spring Boot Configuration Guide
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.javatpoint.com/spring-boot-application-properties"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        JavaTPoint: Application Properties Tutorial
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Books</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Spring-Action-Craig-Walls/dp/1617294942"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Spring in Action by Craig Walls
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Learn-Spring-Boot-Java-Applications/dp/1801070084"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Learn Spring Boot by Greg L. Turnquist
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Spring-Boot-Cookbook-developing-production-grade-applications/dp/1803238338"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Spring Boot Cookbook by Alex Antonov
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+        </TabsContent>
+      </Tabs>
+
+      <div className="flex justify-between">
+        <Button variant="outline" asChild>
+          <Link href="/modules/fundamentals/configuration/project-structure">← Project Structure</Link>
+        </Button>
+        <Button asChild>
+          <Link href="/modules/fundamentals/configuration/annotations">Next: Annotation-based Configuration →</Link>
+        </Button>
+      </div>
+    </div>
+  )
+}
