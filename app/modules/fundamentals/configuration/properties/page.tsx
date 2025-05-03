@@ -146,7 +146,7 @@ spring:
                   <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Component
 public class MyComponent {
-    @Value("/${server.port}")
+    @Value("\${server.port}")
     private int serverPort;
 }`}
                   </pre>
@@ -311,10 +311,10 @@ app.title=My Awesome App`}
                     <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Component
 public class AppInfo {
-    @Value("/${app.title}")
+    @Value("\${app.title}")
     private String title;
     
-    @Value("/${app.description:Default Description}")
+    @Value("\${app.description:Default Description}")
     private String description;
     
     public String getInfo() {
