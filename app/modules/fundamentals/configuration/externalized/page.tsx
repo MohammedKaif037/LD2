@@ -353,11 +353,11 @@ java -jar myapp.jar`}
                     <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
 {`# application.properties
 # Uses environment variables when available
-spring.datasource.url=${SPRING_DATASOURCE_URL}
-spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
-spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
+spring.datasource.url=\${SPRING_DATASOURCE_URL}
+spring.datasource.username=\${SPRING_DATASOURCE_USERNAME}
+spring.datasource.password=\${SPRING_DATASOURCE_PASSWORD}
 
-app.title=${APP_TITLE:Default Title}`}
+app.title=\${APP_TITLE:Default Title}`}
                     </pre>
                   </div>
                 </div>
