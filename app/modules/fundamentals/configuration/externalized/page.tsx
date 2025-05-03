@@ -395,4 +395,213 @@ app.title=${APP_TITLE:Default Title}`}
                     <li>Create a Spring Boot application with custom application properties</li>
                     <li>Override some properties using environment variables</li>
                     <li>Inject these properties into a service using @Value</li>
-                    <li>Expose an endpoint that displays current co
+                    <li>Expose an endpoint that displays current configuration values</li>
+                    <li>Verify environment variables override property file values</li>
+                  </ol>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Exercise 3: Implement Secure Configuration</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ol className="list-decimal pl-5 space-y-2">
+                    <li>Create a Spring Boot application that requires sensitive configuration</li>
+                    <li>Store sensitive values in environment variables</li>
+                    <li>Use Spring Cloud Config to manage shared configuration</li>
+                    <li>Implement encryption for sensitive properties</li>
+                    <li>Deploy to a test environment and verify secure operation</li>
+                  </ol>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+        </TabsContent>
+
+        <TabsContent value="resources" className="space-y-6">
+          <section className="space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight">Additional Resources</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Official Documentation</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#data.sql.datasource.configuration"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Spring Boot Externalized Configuration Docs
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        ConfigurableEnvironment API Docs
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://docs.spring.io/spring-cloud-config/docs/current/"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Spring Cloud Config Documentation
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Articles & Tutorials</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://www.baeldung.com/spring-boot-external-config"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Baeldung: Externalized Configuration in Spring Boot
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://reflectoring.io/spring-boot-externalized-configuration/"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Reflectoring: Mastering Externalized Configuration
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.javatpoint.com/spring-boot-externalized-configuration"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        JavaTPoint: Spring Boot Externalized Configuration
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Books</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Spring-Action-Craig-Walls/dp/1617294942"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Spring in Action by Craig Walls
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Learn-Spring-Boot-Java-Applications/dp/1801070084"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Learn Spring Boot by Greg L. Turnquist
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Spring-Boot-Cookbook-developing-production-grade-applications/dp/1803238338"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Spring Boot Cookbook by Alex Antonov
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Related Modules</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <Link 
+                        href="/modules/fundamentals/configuration/project-structure"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Project Structure
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/modules/fundamentals/configuration/application-properties"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Application Properties
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/modules/fundamentals/configuration/profiles"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Profile Management
+                      </Link>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+        </TabsContent>
+      </Tabs>
+
+      <div className="flex justify-between">
+        <Button variant="outline" asChild>
+          <Link href="/modules/fundamentals/configuration/profiles">← Profile Management</Link>
+        </Button>
+        <Button asChild>
+          <Link href="/modules/fundamentals/basic-understanding/spring-boot-starters">Next: Spring Boot Starters →</Link>
+        </Button>
+      </div>
+    </div>
+  )
+}
