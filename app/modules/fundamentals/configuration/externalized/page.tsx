@@ -65,7 +65,7 @@ export default function ExternalizedConfiguration() {
                 <li><strong>System.getProperties():</strong> Java system properties</li>
                 <li><strong>OS environment variables:</strong> Operating system environment variables</li>
                 <li><strong>{@literal @}TestPropertySource annotations:</strong> Used in integration tests</li>
-                <li><strong>application-{profile}.properties:</strong> Profile-specific properties files</li>
+                <li><strong>application-{'{profile}'}.properties:</strong> Profile-specific properties files</li>
                 <li><strong>application.properties:</strong> Default properties file</li>
                 <li><strong>Default properties:</strong> Set programmatically via SpringApplication.setDefaultProperties()</li>
               </ol>
@@ -92,12 +92,12 @@ export default function ExternalizedConfiguration() {
                 <tbody>
                   <tr>
                     <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Property Files</td>
-                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>application.properties</code>, <code>application-{profile}.properties</code></td>
+                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>application.properties</code>, <code>application-{'{profile}'}.properties</code></td>
                     <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">General-purpose configuration</td>
                   </tr>
                   <tr>
                     <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">YAML Files</td>
-                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>application.yml</code>, <code>application-{profile}.yml</code></td>
+                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>application.yml</code>, <code>application-{'{profile}'}.yml</code></td>
                     <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Complex hierarchical configuration</td>
                   </tr>
                   <tr>
