@@ -473,4 +473,165 @@ public class ProdLoggingConfig {
                     </li>
                     <li>
                       <a 
-                        href="https://do
+                        href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Profile.html"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        @Profile Annotation API Docs
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.spring-application.profiles"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Spring Boot Profiles Reference Guide
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Articles & Tutorials</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://www.baeldung.com/spring-profiles"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Baeldung: Working with Spring Profiles
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://reflectoring.io/spring-profiles/"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Reflectoring: Mastering Spring Profiles
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.javatpoint.com/spring-boot-profiles"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        JavaTPoint: Spring Boot Profiles Tutorial
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Books</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Spring-Action-Craig-Walls/dp/1617294942"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Spring in Action by Craig Walls
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Learn-Spring-Boot-Java-Applications/dp/1801070084"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Learn Spring Boot by Greg L. Turnquist
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Spring-Boot-Cookbook-developing-production-grade-applications/dp/1803238338"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Spring Boot Cookbook by Alex Antonov
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Related Modules</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <Link 
+                        href="/modules/fundamentals/configuration/project-structure"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Project Structure
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/modules/fundamentals/configuration/application-properties"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Application Properties
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/modules/fundamentals/configuration/annotations"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Annotation-based Configuration
+                      </Link>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+        </TabsContent>
+      </Tabs>
+
+      <div className="flex justify-between">
+        <Button variant="outline" asChild>
+          <Link href="/modules/fundamentals/configuration/annotations">← Annotation-based Configuration</Link>
+        </Button>
+        <Button asChild>
+          <Link href="/modules/fundamentals/configuration/externalized">Next: Externalized Configuration →</Link>
+        </Button>
+      </div>
+    </div>
+  )
+}
