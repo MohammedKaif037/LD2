@@ -64,7 +64,7 @@ export default function ExternalizedConfiguration() {
                 <li><strong>Command line arguments:</strong> <code>--property=value</code></li>
                 <li><strong>System.getProperties():</strong> Java system properties</li>
                 <li><strong>OS environment variables:</strong> Operating system environment variables</li>
-                <li><strong>{@literal @}TestPropertySource annotations:</strong> Used in integration tests</li>
+                <li><strong>{'@TestPropertySource'} annotations:</strong> Used in integration tests</li>
                 <li><strong>application-{'{profile}'}.properties:</strong> Profile-specific properties files</li>
                 <li><strong>application.properties:</strong> Default properties file</li>
                 <li><strong>Default properties:</strong> Set programmatically via SpringApplication.setDefaultProperties()</li>
@@ -350,7 +350,7 @@ java -jar myapp.jar`}
                   
                   <div>
                     <p className="text-sm font-medium mb-2">Accessing in application.properties</p>
-                    <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                    <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`# application.properties
 # Uses environment variables when available
 spring.datasource.url=\${SPRING_DATASOURCE_URL}
