@@ -474,4 +474,180 @@ public class DatabaseService {
                 <CardHeader>
                   <CardTitle>Official Documentation</CardTitle>
                 </CardHeader>
-         
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/Configuration.html"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        @Configuration API Docs
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Autowired.html"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        @Autowired API Docs
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/factory/annotation/Value.html"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        @Value API Docs
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Articles & Tutorials</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://www.baeldung.com/spring-component-annotation"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Baeldung: @Component and Stereotype Annotations
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.baeldung.com/spring-bean-annotations"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Baeldung: Spring Bean Annotations
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://reflectoring.io/spring-boot-annotations/"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Reflectoring: Essential Spring Boot Annotations
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Books</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Spring-Action-Craig-Walls/dp/1617294942"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Spring in Action by Craig Walls
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Learn-Spring-Boot-Java-Applications/dp/1801070084"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Learn Spring Boot by Greg L. Turnquist
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="https://www.amazon.com/Spring-Boot-Cookbook-developing-production-grade-applications/dp/1803238338"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Spring Boot Cookbook by Alex Antonov
+                      </a>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card>
+                <CardHeader>
+                  <CardTitle>Related Modules</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li>
+                      <Link 
+                        href="/modules/fundamentals/configuration/project-structure"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Project Structure
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/modules/fundamentals/configuration/application-properties"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Application Properties
+                      </Link>
+                    </li>
+                    <li>
+                      <Link 
+                        href="/modules/fundamentals/configuration/externalized"
+                        className="flex items-center gap-2 text-primary hover:underline"
+                      >
+                        <BookOpen className="h-4 w-4" />
+                        Externalized Configuration
+                      </Link>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+        </TabsContent>
+      </Tabs>
+
+      <div className="flex justify-between">
+        <Button variant="outline" asChild>
+          <Link href="/modules/fundamentals/configuration/application-properties">← Application Properties</Link>
+        </Button>
+        <Button asChild>
+          <Link href="/modules/fundamentals/configuration/profiles">Next: Profile Management →</Link>
+        </Button>
+      </div>
+    </div>
+  )
+}
