@@ -208,10 +208,10 @@ public class AppConfig {
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Service
 public class AppInfoService {
-    @Value("${app.title}")
+    @Value("\${app.title}")
     private String appTitle;
 
-    @Value("${app.version}")
+    @Value("\${app.version}")
     private String version;
 }`}
               </pre>
@@ -220,7 +220,7 @@ public class AppInfoService {
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Service
 public class FeatureToggleService {
-    @Value("${feature.new-ui:false}")
+    @Value("\${feature.new-ui:false}")
     private boolean newUIEnabled;
 }`}
               </pre>
@@ -229,7 +229,7 @@ public class FeatureToggleService {
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Service
 public class SystemInfoService {
-    @Value("${JAVA_HOME}")
+    @Value("\${JAVA_HOME}")
     private String javaHome;
 }`}
               </pre>
@@ -240,7 +240,7 @@ public class SystemInfoService {
 public class ConfigService {
     private String adminEmail;
 
-    @Value("${admin.email}")
+    @Value("\${admin.email}")
     public void setAdminEmail(String adminEmail) {
         this.adminEmail = adminEmail;
     }
