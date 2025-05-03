@@ -1,9 +1,9 @@
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { BookOpen, ExternalLink } from "lucide-react"
-import Link from "next/link"
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { BookOpen, ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 export default function ApplicationProperties() {
   return (
@@ -146,7 +146,7 @@ spring:
                   <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Component
 public class MyComponent {
-    @Value("${server.port}")
+    @Value("/${server.port}")
     private int serverPort;
 }`}
                   </pre>
@@ -589,5 +589,5 @@ public class InfoService {
         </Button>
       </div>
     </div>
-  )
+  );
 }
