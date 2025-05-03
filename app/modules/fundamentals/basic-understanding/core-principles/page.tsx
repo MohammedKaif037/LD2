@@ -484,7 +484,7 @@ public class OrderService {
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Create a simple logging system with the following components:
-                      <ul className="list-disc pl-5 mt-1">
+                      <ul className="list-disc pl-5 space-y-1 mb-4">
                         <li>An ILogger interface with a log method</li>
                         <li>ConsoleLogger implementation</li>
                         <li>FileLogger implementation</li>
@@ -506,7 +506,7 @@ public class OrderService {
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Create a notification system with the following:
-                      <ul className="list-disc pl-5 mt-1">
+                      <ul className="list-disc pl-5 space-y-1 mb-4">
                         <li>A NotificationService class</li>
                         <li>EmailService dependency</li>
                         <li>SmsService dependency</li>
@@ -528,7 +528,7 @@ public class OrderService {
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Create an e-commerce system that follows all SOLID principles</li>
                     <li>Include:
-                      <ul className="list-disc pl-5 mt-1">
+                      <ul className="list-disc pl-5 space-y-1 mb-4">
                         <li>Order processing with single responsibility per class</li>
                         <li>Payment options that follow open/closed principle</li>
                         <li>Various shipping strategies that demonstrate Liskov substitution</li>
@@ -552,7 +552,7 @@ public class OrderService {
                     <li>Find or create a sample of legacy code that violates core principles</li>
                     <li>Identify which principles are violated</li>
                     <li>Refactor the code to follow:
-                      <ul className="list-disc pl-5 mt-1">
+                      <ul className="list-disc pl-5 space-y-1 mb-4">
                         <li>IoC and DI principles</li>
                         <li>All five SOLID principles</li>
                         <li>Proper separation of concerns</li>
