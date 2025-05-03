@@ -431,4 +431,4 @@ Dependencies: Spring Web, Spring Data JPA, Thymeleaf, H2 Database, Spring Boot D
       </div>
     </div>
   )
-                      }
+}
