@@ -543,8 +543,7 @@ public class ProductCacheService {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Real-Time Analytics</CardTitle>
-                <CardHeader>
-                  <CardTitle>Advanced level</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
