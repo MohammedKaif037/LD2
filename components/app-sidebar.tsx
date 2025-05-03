@@ -61,7 +61,7 @@ export function AppSidebar() {
             { title: "Spring Boot Overview", path: "/modules/fundamentals/basic-understanding/overview" },
             { title: "Core Principles", path: "/modules/fundamentals/basic-understanding/core-principles" },
             { title: "Dependency Injection", path: "/modules/fundamentals/basic-understanding/dependency-injection" },
-            { title: "Spring Boot Starters", path: "/modules/fundamentals/basic-understanding/starters" },
+            { title: "Spring Boot Starters", path: "/modules/fundamentals/basic-understanding/spring-boot-starters" },
             { title: "Embedded Servers", path: "/modules/fundamentals/basic-understanding/embedded-servers" },
           ],
         },
