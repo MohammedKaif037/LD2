@@ -159,7 +159,7 @@ export default function Oauth2SecurityModule() {
               </p>
               
               <h3>Add Dependency (Maven):</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`<dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-oauth2-client</artifactId>
@@ -167,7 +167,7 @@ export default function Oauth2SecurityModule() {
               </pre>
               
               <h3>Configure in application.properties:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-google-client-secret
 spring.security.oauth2.client.registration.github.client-id=your-github-client-id
@@ -175,7 +175,7 @@ spring.security.oauth2.client.registration.github.client-secret=your-github-secr
               </pre>
               
               <h3>Basic Security Configuration:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Configuration
 @EnableWebSecurity
 public class Oauth2Config {
@@ -314,7 +314,7 @@ spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}
                 <cardtitle>application.properties</cardtitle>
               </cardheader>
               <cardcontent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-google-client-secret
 spring.security.oauth2.client.registration.google.scope=email,profile`}
@@ -330,7 +330,7 @@ spring.security.oauth2.client.registration.google.scope=email,profile`}
                 <cardtitle>ProductService.java</cardtitle>
               </cardheader>
               <cardcontent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Service
 public class ProductService {
     private final WebClient webClient;
