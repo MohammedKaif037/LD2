@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -315,26 +315,26 @@ public class Product {
 
         <TabsContent value="examples" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Basic Repository Interface</h2>
-            <Card>
-              <CardHeader>
-                <CardTitle>ProductRepository.java</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
+  <h2 className="text-2xl font-bold tracking-tight">Basic Repository Interface</h2>
+  <Card>
+    <CardHeader>
+      <CardTitle>ProductRepository.java</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByNameContaining(String keyword);
     
-    @Query("SELECT p FROM Product p WHERE p.price BETWEEN :min AND :max")
+    ${'@Query("SELECT p FROM Product p WHERE p.price BETWEEN :min AND :max")'}
     Page<Product> findByPriceRange(
-        @Param("min") BigDecimal min,
-        @Param("max") BigDecimal max,
+        ${'@Param("min")'} BigDecimal min,
+        ${'@Param("max")'} BigDecimal max,
         Pageable pageable);
 }`}
-                </pre>
-              </CardContent>
-            </Card>
-          </section>
+      </pre>
+    </CardContent>
+  </Card>
+</section>
 
       <section className="space-y-4">
         <h2 className="text-2xl font-bold tracking-tight">Custom Query Example</h2>
