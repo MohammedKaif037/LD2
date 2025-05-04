@@ -377,7 +377,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
-                    <li>Define role hierarchy (e.g., USER < ADMIN)</li>
+                    <li>Define role hierarchy (e.g., <code>USER &lt; ADMIN</code>)</li>
                     <li>Assign inherited permissions</li>
                     <li>Test access with lower-level roles</li>
                     <li>Verify authorization works as expected</li>
