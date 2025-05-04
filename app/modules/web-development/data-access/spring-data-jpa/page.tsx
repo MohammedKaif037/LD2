@@ -153,52 +153,41 @@ export default function SpringDataJpaModule() {
               </tbody>
             </table>
           </section>
-
-          <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Implementing Spring Data JPA in Spring Boot</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                To implement Spring Data JPA in your Spring Boot application:
-              </p>
-              
-              <h3>Add Dependency (Maven):</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
-{`<dependency>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-data-jpa</artifactId>
-</dependency>`}
-              </pre>
-              
-              <h3>Create Entity Class:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
-{`@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+<section className="space-y-4">
+        <h2 className="text-2xl font-bold tracking-tight">Implementing Spring Data JPA in Spring Boot</h2>
+        <div className="prose dark:prose-invert max-w-none">
+          {/* Corrected Spring annotations with proper escaping */}
+          <h3>Create Entity Class:</h3>
+          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
+{`${'@Entity'}
+${'@Data'}
+${'@NoArgsConstructor'}
+${'@AllArgsConstructor'}
 public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    ${'@Id'}
+    ${'@GeneratedValue(strategy = GenerationType.IDENTITY)'}
     private Long id;
     
     private String name;
     private BigDecimal price;
 }`}
-              </pre>
-              
-              <h3>Define Repository Interface:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
+          </pre>
+
+          <h3>Define Repository Interface:</h3>
+          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByNameContaining(String keyword);
     
-    @Query("SELECT p FROM Product p WHERE p.price BETWEEN :min AND :max")
+    ${'@Query("SELECT p FROM Product p WHERE p.price BETWEEN :min AND :max")'}
     Page<Product> searchByPriceRange(
-        @Param("min") BigDecimal min,
-        @Param("max") BigDecimal max,
+        ${'@Param("min")'} BigDecimal min,
+        ${'@Param("max")'} BigDecimal max,
         Pageable pageable);
 }`}
-              </pre>
-            </div>
-          </section>
+          </pre>
+        </div>
+      </section>
+
 
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Query Derivation Examples</h2>
