@@ -393,7 +393,6 @@ public class ApiResponse<T> {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Content Negotiation</CardTitle>
-                <CardHeader>
                   <CardTitle>Advanced level</CardTitle>
                 </CardHeader>
                 <CardContent>
