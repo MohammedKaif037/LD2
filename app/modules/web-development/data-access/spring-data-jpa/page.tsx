@@ -1,4 +1,4 @@
- "use client";
+"use client"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -33,9 +33,8 @@ export default function SpringDataJpaModule() {
             <h2 className="text-2xl font-bold tracking-tight">What is Spring Data JPA?</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
-                Spring Data JPA is part of the larger Spring Data family that simplifies the implementation of repositories by using 
-                Java Persistence API (JPA) under the hood. It provides powerful features like query derivation, pagination, sorting,
-                and auditing without writing boilerplate code.
+                Spring Data JPA is part of the larger Spring Data family that simplifies the implementation of repositories by using Java Persistence API (JPA) under the hood.
+                It provides powerful features like query derivation, pagination, sorting, and auditing without writing boilerplate code.
               </p>
               
               <p>Key components of Spring Data JPA:</p>
@@ -155,12 +154,24 @@ export default function SpringDataJpaModule() {
               </tbody>
             </table>
           </section>
-<section className="space-y-4">
-        <h2 className="text-2xl font-bold tracking-tight">Implementing Spring Data JPA in Spring Boot</h2>
-        <div className="prose dark:prose-invert max-w-none">
-          {/* Corrected Spring annotations with proper escaping */}
-          <h3>Create Entity Class:</h3>
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
+
+          <section className="space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight">Implementing Spring Data JPA in Spring Boot</h2>
+            <div className="prose dark:prose-invert max-w-none">
+              <p>
+                To implement Spring Data JPA in your Spring Boot application:
+              </p>
+              
+              <h3>Add Dependency (Maven):</h3>
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
+{`<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>`}
+              </pre>
+              
+              <h3>Create Entity Class:</h3>
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`${'@Entity'}
 ${'@Data'}
 ${'@NoArgsConstructor'}
@@ -173,10 +184,10 @@ public class Product {
     private String name;
     private BigDecimal price;
 }`}
-          </pre>
-
-          <h3>Define Repository Interface:</h3>
-          <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
+              </pre>
+              
+              <h3>Define Repository Interface:</h3>
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByNameContaining(String keyword);
     
@@ -186,10 +197,9 @@ public class Product {
         ${'@Param("max")'} BigDecimal max,
         Pageable pageable);
 }`}
-          </pre>
-        </div>
-      </section>
-
+              </pre>
+            </div>
+          </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Query Derivation Examples</h2>
@@ -294,7 +304,7 @@ public class Product {
                     <li>Use parameterized queries to prevent injection</li>
                   </ul>
                 </CardContent>
-              </Card>
+              </card>
               
               <Card>
                 <CardHeader>
@@ -304,7 +314,7 @@ public class Product {
                   <ul className="space-y-2">
                     <li>Use pagination for large datasets</li>
                     <li>Select only necessary fields using projections</li>
-                    <li>Batch operations when needed</li>
+                    <li>Batch operations where possible</li>
                     <li>Use @EntityGraph for fetching related data</li>
                   </ul>
                 </CardContent>
@@ -315,13 +325,13 @@ public class Product {
 
         <TabsContent value="examples" className="space-y-6">
           <section className="space-y-4">
-  <h2 className="text-2xl font-bold tracking-tight">Basic Repository Interface</h2>
-  <Card>
-    <CardHeader>
-      <CardTitle>ProductRepository.java</CardTitle>
-    </CardHeader>
-    <CardContent>
-      <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
+            <h2 className="text-2xl font-bold tracking-tight">Basic Repository Interface</h2>
+            <Card>
+              <CardHeader>
+                <CardTitle>ProductRepository.java</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByNameContaining(String keyword);
     
@@ -331,31 +341,31 @@ public class Product {
         ${'@Param("max")'} BigDecimal max,
         Pageable pageable);
 }`}
-      </pre>
-    </CardContent>
-  </Card>
-</section>
+                </pre>
+              </CardContent>
+            </Card>
+          </section>
 
-      <section className="space-y-4">
-        <h2 className="text-2xl font-bold tracking-tight">Custom Query Example</h2>
-        <Card>
-          <CardHeader>
-            <CardTitle>OrderRepository.java</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
+          <section className="space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight">Custom Query Example</h2>
+            <Card>
+              <CardHeader>
+                <CardTitle>OrderRepository.java</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`public interface OrderRepository extends JpaRepository<Order, Long> {
     ${'@Query(value = "SELECT o FROM Order o JOIN FETCH o.items WHERE o.user.id = :userId")'}
-    List<Order> findOrdersWithItemsByUserId(${'@Param("userId")'} Long userId);
+    List<Order> findOrdersWithItemsByUserId(${`@Param("userId")`} Long userId);
     
     ${'@Modifying'}
     ${'@Query("UPDATE Order o SET o.status = :status WHERE o.id = :id")'}
-    int updateOrderStatus(${'@Param("id")'} Long id, ${'@Param("status")'} String status);
+    int updateOrderStatus(${`@Param("id")`} Long id, ${`@Param("status")`} String status);
 }`}
-            </pre>
-          </CardContent>
-        </Card>
-      </section>
+                </pre>
+              </CardContent>
+            </Card>
+          </section>
         </TabsContent>
 
         <TabsContent value="exercises" className="space-y-6">
