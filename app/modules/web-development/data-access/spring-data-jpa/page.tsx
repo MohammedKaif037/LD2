@@ -284,10 +284,10 @@ public class Product {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Always check Optional results before accessing</li>
-                    <li>Handle NoResultException and NonUniqueResultException</li>
-                    <li>Log query failures for debugging</li>
-                    <li>Wrap complex logic in service layer</li>
+                    <li>Never expose raw exceptions</li>
+                    <li>Wrap complex queries in try-catch</li>
+                    <li>Log errors internally but hide from clients</li>
+                    <li>Throw meaningful exception types</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -298,13 +298,13 @@ public class Product {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Never expose repositories directly to controllers</li>
+                    <li>Validate input before passing to repository</li>
                     <li>Avoid returning raw entities from APIs</li>
-                    <li>Validate input before querying</li>
                     <li>Use parameterized queries to prevent injection</li>
+                    <li>Secure sensitive fields and associations</li>
                   </ul>
                 </CardContent>
-              </card>
+              </Card>
               
               <Card>
                 <CardHeader>
@@ -314,7 +314,7 @@ public class Product {
                   <ul className="space-y-2">
                     <li>Use pagination for large datasets</li>
                     <li>Select only necessary fields using projections</li>
-                    <li>Batch operations where possible</li>
+                    <li>Batch operations when needed</li>
                     <li>Use @EntityGraph for fetching related data</li>
                   </ul>
                 </CardContent>
@@ -353,7 +353,7 @@ public class Product {
                 <CardTitle>OrderRepository.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
 {`public interface OrderRepository extends JpaRepository<Order, Long> {
     ${'@Query(value = "SELECT o FROM Order o JOIN FETCH o.items WHERE o.user.id = :userId")'}
     List<Order> findOrdersWithItemsByUserId(${`@Param("userId")`} Long userId);
@@ -443,7 +443,7 @@ public class Product {
                     </li>
                     <li>
                       <a 
-                        href="https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html"
+                        href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/data/repository/CrudRepository.html"
                         className="flex items-center gap-2 text-primary hover:underline"
                         target="_blank"
                         rel="noopener noreferrer"
