@@ -99,7 +99,7 @@ export default function SpringBootTestModule() {
               </p>
               
               <h3>Example Usage:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserServiceIntegrationTest {
@@ -131,7 +131,7 @@ public class UserServiceIntegrationTest {
               </p>
               
               <h3>Example Controller Test:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@RunWith(SpringRunner.class)
 @WebMvcTest(UserController.class)
 public class UserControllerTest {
@@ -168,7 +168,7 @@ public class UserControllerTest {
               </p>
               
               <h3>Example Repository Test:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@RunWith(SpringRunner.class)
 @DataJpaTest
 public class UserRepositoryTest {
@@ -263,7 +263,7 @@ public class UserRepositoryTest {
                 <CardTitle>UserIntegrationTest.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserIntegrationTest {
@@ -291,7 +291,7 @@ public class UserIntegrationTest {
                 <CardTitle>UserRestControllerTest.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@RunWith(SpringRunner.class)
 @WebMvcTest(UserController.class)
 public class UserControllerTest {
@@ -355,7 +355,7 @@ public class UserControllerTest {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Persistence Layer Test</CardTitle>
-                  <CardDescription>Advanced level</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
