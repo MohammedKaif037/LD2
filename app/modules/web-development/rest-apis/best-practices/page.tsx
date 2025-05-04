@@ -169,7 +169,7 @@ export default function RestApiBestPracticesModule() {
               </p>
               
               <h3>Use Standard Response Wrapper:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -182,7 +182,7 @@ public class ApiResponse<T> {
               </pre>
               
               <h3>Controller Example:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -310,7 +310,7 @@ public class UserController {
                 <CardTitle>ApiResponse.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -332,7 +332,7 @@ public class ApiResponse<T> {
                 <CardTitle>GlobalExceptionHandler.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
