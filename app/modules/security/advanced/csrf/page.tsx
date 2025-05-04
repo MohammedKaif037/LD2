@@ -160,7 +160,7 @@ export default function CsrfProtectionModule() {
               </p>
               
               <h3>Add Dependency (Spring Boot):</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`<!-- Maven -->
 <dependency>
   <groupId>org.springframework.boot</groupId>
@@ -169,7 +169,7 @@ export default function CsrfProtectionModule() {
               </pre>
               
               <h3>Basic Configuration:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Configuration
 @EnableWebSecurity
 public class CsrfConfig {
@@ -189,12 +189,12 @@ public class CsrfConfig {
               </pre>
               
               <h3>Using CSRF Token in HTML:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`<form th:action="@{/api/secure-action}" method="post">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <input type="hidden" th:name="\${_csrf.parameterName}" th:value="\${_csrf.token}"/>
     <!-- Form fields -->
 </form>`}
-              </pre>
+</pre>
             </div>
           </section>
 
@@ -303,7 +303,7 @@ public class CsrfConfig {
                 <CardTitle>SecurityConfig.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -332,7 +332,7 @@ public class SecurityConfig {
                 <CardTitle>SecurityConfig.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Configuration
 @EnableWebSecurity
 public class StatelessSecurityConfig {
@@ -410,7 +410,7 @@ public class StatelessSecurityConfig {
 
         <TabsContent value="resources" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Additional Resources</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Additional Resources</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
