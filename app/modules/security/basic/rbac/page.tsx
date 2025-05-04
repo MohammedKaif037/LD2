@@ -99,7 +99,7 @@ export default function RbacModule() {
                   <CardTitle>URL-Level Security</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Configuration
 @EnableWebSecurity
 public class RbacConfig {
@@ -125,7 +125,7 @@ public class RbacConfig {
                   <CardTitle>Method-Level Security</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Service
 public class AdminService {
     @PreAuthorize("hasRole('ADMIN')")
@@ -192,7 +192,7 @@ public class AdminService {
               </p>
               
               <h3>Add Dependency (Maven):</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`<dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-security</artifactId>
@@ -200,7 +200,7 @@ public class AdminService {
               </pre>
               
               <h3>Enable Method Security:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -210,7 +210,7 @@ public class RbacSecurityConfig {
               </pre>
               
               <h3>Secure Service Methods:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Service
 public class OrderService {
     @PreAuthorize("hasRole('ADMIN')")
@@ -297,7 +297,7 @@ public class OrderService {
                 <CardTitle>SecurityConfig.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -326,7 +326,7 @@ public class SecurityConfig {
                 <CardTitle>UserDetailsService.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Service
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
@@ -388,7 +388,7 @@ public class CustomUserDetailsService implements UserDetailsService {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Dynamic Role Management</CardTitle>
-                  <CardDescription>Advanced level</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
