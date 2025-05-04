@@ -58,7 +58,7 @@ export default function TestConfigurationModule() {
                 You can provide separate configuration files for testing:
               </p>
               
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`application.properties
 application-dev.properties
 application-test.properties ← Used in tests`}
@@ -72,7 +72,7 @@ application-test.properties ← Used in tests`}
               </ul>
               
               <h3>Example Test Properties:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`# application-test.properties
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driver-class-name=org.h2.Driver
@@ -91,7 +91,7 @@ spring.jpa.hibernate.ddl-auto=update`}
                   <CardTitle>@Profile("test")</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Component
 @Profile("test")
 public class TestEmailService implements EmailService {
@@ -110,7 +110,7 @@ public class TestEmailService implements EmailService {
                   <CardTitle>@TestPropertySource</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@RunWith(SpringRunner.class)
 @SpringBootTest
 @TestPropertySource("/test.properties")
@@ -130,7 +130,7 @@ public class MyIntegrationTest {
                   <CardTitle>Embedded Databases</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`# application-test.properties
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.username=sa
@@ -149,7 +149,7 @@ spring.jpa.hibernate.ddl-auto=update`}
                   <CardTitle>Mock Services</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Bean
 public UserService userService() {
     return new MockUserService();
@@ -171,7 +171,7 @@ public UserService userService() {
                 The <code>spring-boot-starter-test</code> includes all necessary libraries for writing tests:
               </p>
               
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`<dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-test</artifactId>
@@ -283,7 +283,7 @@ public UserService userService() {
                 <CardTitle>build.gradle</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mockito:mockito-core'
@@ -300,7 +300,7 @@ public UserService userService() {
                 <CardTitle>UserServiceTest.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
@@ -326,7 +326,7 @@ public class UserServiceTest {
                 <CardTitle>TestConfig.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Configuration
 @Profile("test")
 public class TestConfig {
@@ -363,7 +363,7 @@ public class TestConfig {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 2: Override Test Beans</CardTitle>
-                  <CardDescription>Intermediate level</CardTitle>
+                  <CardDescription>Intermediate level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
