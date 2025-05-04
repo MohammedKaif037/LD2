@@ -154,14 +154,14 @@ export default function RepositoryPatternModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Implementing Repositories in Spring Boot</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Implementing Repositories in Spring Boot</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 To implement the repository pattern in Spring Boot:
               </p>
               
               <h3>Create Domain Entity:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Entity
 @Data
 @NoArgsConstructor
@@ -177,7 +177,7 @@ public class User {
               </pre>
               
               <h3>Define Repository Interface:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
@@ -188,7 +188,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
               </pre>
               
               <h3>Use in Service Layer:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Service
 public class UserService {
     private final UserRepository userRepository;
@@ -209,7 +209,7 @@ public class UserService {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Types of Repository Implementations</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Types of Repository Implementations</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
               <thead>
                 <tr className="bg-muted">
@@ -249,7 +249,7 @@ public class UserService {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Best Practices for Repository Implementation</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Best Practices for Repository Implementation</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -318,7 +318,7 @@ public class UserService {
                 <CardTitle>UserRepository.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
@@ -338,7 +338,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
                 <CardTitle>ProductRepository.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("SELECT p FROM Product p WHERE p.price BETWEEN ?1 AND ?2")
@@ -391,8 +391,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Composite Repository</CardTitle>
-                <CardHeader>
-                  <CardTitle>Advanced level</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
@@ -409,7 +408,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
         <TabsContent value="resources" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Additional Resources</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Additional Resources</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
