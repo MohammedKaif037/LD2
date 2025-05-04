@@ -14,7 +14,7 @@ export default function SagaPatternModule() {
           <Badge>Module 14.3</Badge>
         </div>
         <p className="text-muted-foreground">
-          Learn how to manage distributed transactions using the Saga Pattern in microservice architectures
+          Learn how to manage distributed transactions using the Saga Pattern in microservice architectures.
         </p>
       </div>
 
@@ -35,15 +35,15 @@ export default function SagaPatternModule() {
                 It coordinates local transactions in each service through events or compensating actions, ensuring that either all operations succeed
                 or appropriate rollback actions are taken if any step fails.
               </p>
-              
+
               <p>The key characteristics of the Saga Pattern:</p>
               <ul>
-                <li><strong>Local Transactions:</strong> Each service handles its own transaction</li>
-                <li><strong>Compensating Actions:</strong> Reverses previous steps when a failure occurs</li>
-                <li><strong>Event Choreography:</strong> Services react to events without central coordination</li>
-                <li><strong>Orchestration:</strong> A central coordinator manages the workflow and failures</li>
+                <li><strong>Local Transactions:</strong> Each service handles its own transaction.</li>
+                <li><strong>Compensating Actions:</strong> Reverses previous steps when a failure occurs.</li>
+                <li><strong>Event Choreography:</strong> Services react to events without central coordination.</li>
+                <li><strong>Orchestration:</strong> A central coordinator manages the workflow and failures.</li>
               </ul>
-              
+
               <p>
                 In Spring Boot, the Saga Pattern can be implemented using event sourcing, message queues like Kafka or RabbitMQ,
                 and orchestration engines such as Cadence or Temporal.
@@ -97,7 +97,7 @@ export default function SagaPatternModule() {
               <p>
                 There are two main approaches to implementing the Saga Pattern:
               </p>
-              
+
               <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
                 <thead>
                   <tr className="bg-muted">
@@ -109,13 +109,13 @@ export default function SagaPatternModule() {
                 <tbody>
                   <tr>
                     <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>Choreography</code></td>
-                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Each service listens to events and reacts accordingly</td>
-                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Decentralized systems where services evolve independently</td>
+                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Each service listens to events and reacts accordingly.</td>
+                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Decentralized systems where services evolve independently.</td>
                   </tr>
                   <tr>
                     <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>Orchestration</code></td>
-                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">A central orchestrator sends commands to each service</td>
-                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Complex workflows requiring strict ordering and control</td>
+                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">A central orchestrator sends commands to each service.</td>
+                    <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Complex workflows requiring strict ordering and control.</td>
                   </tr>
                 </tbody>
               </table>
@@ -131,52 +131,52 @@ export default function SagaPatternModule() {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Ensures consistency across multiple services</li>
-                    <li>Handles partial failures gracefully</li>
-                    <li>Supports eventual consistency model</li>
-                    <li>Maintains business rules across microservices</li>
+                    <li>Ensures consistency across multiple services.</li>
+                    <li>Handles partial failures gracefully.</li>
+                    <li>Supports eventual consistency model.</li>
+                    <li>Maintains business rules across microservices.</li>
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Scalability</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Allows independent scaling of services</li>
-                    <li>Reduces contention between services</li>
-                    <li>Supports high-throughput distributed systems</li>
-                    <li>Enables asynchronous processing</li>
+                    <li>Allows independent scaling of services.</li>
+                    <li>Reduces contention between services.</li>
+                    <li>Supports high-throughput distributed systems.</li>
+                    <li>Enables asynchronous processing.</li>
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Error Handling</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Provides explicit rollback strategy</li>
-                    <li>Tracks compensating actions in logs</li>
-                    <li>Supports manual recovery for failed transactions</li>
-                    <li>Integrates well with monitoring tools</li>
+                    <li>Provides explicit rollback strategy.</li>
+                    <li>Tracks compensating actions in logs.</li>
+                    <li>Supports manual recovery for failed transactions.</li>
+                    <li>Integrates well with monitoring tools.</li>
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Resilience</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Prevents stuck transactions</li>
-                    <li>Works well with circuit breakers and retries</li>
-                    <li>Supports idempotent operations</li>
-                    <li>Enables audit trail for compliance</li>
+                    <li>Prevents stuck transactions.</li>
+                    <li>Works well with circuit breakers and retries.</li>
+                    <li>Supports idempotent operations.</li>
+                    <li>Enables audit trail for compliance.</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -189,17 +189,17 @@ export default function SagaPatternModule() {
               <p>
                 To implement the Saga Pattern in Spring Boot applications:
               </p>
-              
+
               <h3>Add Dependency (Example with Axon Framework):</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`<dependency>
   <groupId>org.axonframework</groupId>
   <artifactId>axon-spring-boot-starter</artifactId>
 </dependency>`}
               </pre>
-              
+
               <h3>Basic Saga Class:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Aggregate
 public class OrderSaga {
     @Autowired
@@ -218,9 +218,9 @@ public class OrderSaga {
     }
 }`}
               </pre>
-              
+
               <h3>Event Listener:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Service
 public class OrderEventListener {
     @Autowired
@@ -244,52 +244,52 @@ public class OrderEventListener {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Keep individual steps idempotent</li>
-                    <li>Make compensating actions reliable and retryable</li>
-                    <li>Track saga state for visibility</li>
-                    <li>Implement timeouts for long-running sagas</li>
+                    <li>Keep individual steps idempotent.</li>
+                    <li>Make compensating actions reliable and retryable.</li>
+                    <li>Track saga state for visibility.</li>
+                    <li>Implement timeouts for long-running sagas.</li>
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Implementation Tips</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Use messaging systems like Kafka or RabbitMQ</li>
-                    <li>Avoid long-running sagas where possible</li>
-                    <li>Log every saga step for troubleshooting</li>
-                    <li>Implement cancellation tokens for orphaned sagas</li>
+                    <li>Use messaging systems like Kafka or RabbitMQ.</li>
+                    <li>Avoid long-running sagas where possible.</li>
+                    <li>Log every saga step for troubleshooting.</li>
+                    <li>Implement cancellation tokens for orphaned sagas.</li>
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Error Recovery</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Ensure fallback logic works for every step</li>
-                    <li>Use dead-letter queue for failed messages</li>
-                    <li>Implement manual resolution process</li>
-                    <li>Monitor uncompleted sagas</li>
+                    <li>Ensure fallback logic works for every step.</li>
+                    <li>Use dead-letter queue for failed messages.</li>
+                    <li>Implement manual resolution process.</li>
+                    <li>Monitor uncompleted sagas.</li>
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Cloud-Native Integration</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Use Kubernetes Jobs for long-running processes</li>
-                    <li>Integrate with distributed tracing (Jaeger, Zipkin)</li>
-                    <li>Store saga state in Redis or etcd</li>
-                    <li>Automate cleanup with cloud functions or cron jobs</li>
+                    <li>Use Kubernetes Jobs for long-running processes.</li>
+                    <li>Integrate with distributed tracing (Jaeger, Zipkin).</li>
+                    <li>Store saga state in Redis or etcd.</li>
+                    <li>Automate cleanup with cloud functions or cron jobs.</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -345,7 +345,7 @@ public class OrderEventListener {
                 <CardTitle>OrderSaga.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Component
 public class OrderSaga {
     @Autowired
@@ -377,7 +377,7 @@ public class OrderSaga {
                 <CardTitle>PaymentListener.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Component
 public class PaymentListener {
     @Autowired
@@ -410,14 +410,14 @@ public class PaymentListener {
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
-                    <li>Create an order service that publishes creation events</li>
-                    <li>Implement payment and inventory services</li>
-                    <li>Build a Saga that handles success/failure scenarios</li>
-                    <li>Test end-to-end flow with successful execution</li>
+                    <li>Create an order service that publishes creation events.</li>
+                    <li>Implement payment and inventory services.</li>
+                    <li>Build a Saga that handles success/failure scenarios.</li>
+                    <li>Test end-to-end flow with successful execution.</li>
                   </ol>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 2: Compensation Logic</CardTitle>
@@ -425,27 +425,26 @@ public class PaymentListener {
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
-                    <li>Create scenario where payment succeeds but inventory fails</li>
-                    <li>Implement compensation logic to reverse payment</li>
-                    <li>Test behavior under partial failure</li>
-                    <li>Verify final state is consistent</li>
+                    <li>Create a scenario where payment succeeds but inventory fails.</li>
+                    <li>Implement compensation logic to reverse payment.</li>
+                    <li>Test behavior under partial failure.</li>
+                    <li>Verify final state is consistent.</li>
                   </ol>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Distributed Transaction Logging</CardTitle>
-                <CardHeader>
-                  <CardTitle>Advanced level</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
-                    <li>Create saga that spans 4+ services</li>
-                    <li>Implement detailed logging for each step</li>
-                    <li>Add timeouts and retry mechanisms</li>
-                    <li>Visualize saga progress in UI dashboard</li>
-                    <li>Simulate network partition and test recovery</li>
+                    <li>Create a saga that spans 4+ services.</li>
+                    <li>Implement detailed logging for each step.</li>
+                    <li>Add timeouts and retry mechanisms.</li>
+                    <li>Visualize saga progress in a UI dashboard.</li>
+                    <li>Simulate network partition and test recovery.</li>
                   </ol>
                 </CardContent>
               </Card>
@@ -488,7 +487,7 @@ public class PaymentListener {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Books</CardTitle>
@@ -520,7 +519,7 @@ public class PaymentListener {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Articles & Tutorials</CardTitle>
@@ -552,7 +551,7 @@ public class PaymentListener {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Related Modules</CardTitle>
