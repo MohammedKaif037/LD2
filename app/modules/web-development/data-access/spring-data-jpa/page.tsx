@@ -389,7 +389,7 @@ public class Product {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 2: Custom JPQL Queries</CardTitle>
-                  <CardDescription>Intermediate level</CardTitle>
+                  <CardDescription>Intermediate level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
