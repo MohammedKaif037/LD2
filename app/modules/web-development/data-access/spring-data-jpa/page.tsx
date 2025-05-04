@@ -353,16 +353,17 @@ public class Product {
                 <CardTitle>OrderRepository.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
+                {/* In the Custom Query Example section */}
+<pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`public interface OrderRepository extends JpaRepository<Order, Long> {
     ${'@Query(value = "SELECT o FROM Order o JOIN FETCH o.items WHERE o.user.id = :userId")'}
-    List<Order> findOrdersWithItemsByUserId(${`@Param("userId")`} Long userId);
+    List<Order> findOrdersWithItemsByUserId(${'@Param("userId")'} Long userId);
     
     ${'@Modifying'}
     ${'@Query("UPDATE Order o SET o.status = :status WHERE o.id = :id")'}
-    int updateOrderStatus(${`@Param("id")`} Long id, ${`@Param("status")`} String status);
+    int updateOrderStatus(${'@Param("id")'} Long id, ${'@Param("status")'} String status);
 }`}
-                </pre>
+</pre>
               </CardContent>
             </Card>
           </section>
