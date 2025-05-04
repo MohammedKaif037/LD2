@@ -14,7 +14,7 @@ export default function SessionManagementModule() {
           <Badge>Module 7.10</Badge>
         </div>
         <p className="text-muted-foreground">
-          Learn how to manage user sessions securely in Spring Boot applications
+          Learn how to manage user sessions securely in Spring Boot applications.
         </p>
       </div>
 
@@ -35,7 +35,7 @@ export default function SessionManagementModule() {
                 In Spring Security, it involves managing cookies, tracking active sessions, and ensuring that users remain authenticated
                 while interacting with an application.
               </p>
-              
+
               <p>Key components of session management:</p>
               <ul>
                 <li><strong>Session Creation:</strong> When does a session get created?</li>
@@ -44,7 +44,7 @@ export default function SessionManagementModule() {
                 <li><strong>Concurrent Sessions:</strong> How many sessions per user?</li>
                 <li><strong>Session Invalidation:</strong> When should a session end?</li>
               </ul>
-              
+
               <p>
                 Spring Security provides built-in support for session management through configuration options and listeners,
                 allowing developers to implement secure and scalable session handling.
@@ -53,7 +53,7 @@ export default function SessionManagementModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Session Management Concepts</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Session Management Concepts</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
               <thead>
                 <tr className="bg-muted">
@@ -71,7 +71,7 @@ export default function SessionManagementModule() {
                 <tr>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>Timeout Handling</code></td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Define maximum session duration</td>
-                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Logout after period of inactivity</td>
+                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Logout after a period of inactivity</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>Concurrent Sessions</code></td>
@@ -93,7 +93,7 @@ export default function SessionManagementModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Why Secure Session Management Matters</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Why Secure Session Management Matters</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -108,7 +108,7 @@ export default function SessionManagementModule() {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Operational Security</CardTitle>
@@ -122,7 +122,7 @@ export default function SessionManagementModule() {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Compliance & Governance</CardTitle>
@@ -131,12 +131,12 @@ export default function SessionManagementModule() {
                   <ul className="space-y-2 text-sm">
                     <li>Meets GDPR, HIPAA, PCI-DSS standards</li>
                     <li>Supports session timeouts for sensitive data</li>
-                    <li>Provides audit trail for login/logout events</li>
+                    <li>Provides an audit trail for login/logout events</li>
                     <li>Tracks IP addresses and device fingerprints</li>
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Modern Web Standards</CardTitle>
@@ -145,7 +145,7 @@ export default function SessionManagementModule() {
                   <ul className="space-y-2 text-sm">
                     <li>Uses SameSite cookies to prevent CSRF</li>
                     <li>Sets Secure and HttpOnly flags</li>
-                    <li>Supports token-based auth where appropriate</li>
+                    <li>Supports token-based authentication where appropriate</li>
                     <li>Integrates with distributed session stores</li>
                   </ul>
                 </CardContent>
@@ -154,22 +154,22 @@ export default function SessionManagementModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Implementing Session Management in Spring Security</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Implementing Session Management in Spring Security</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 To configure session management in Spring Security:
               </p>
-              
+
               <h3>Add Dependency (Maven):</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`<dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-security</artifactId>
 </dependency>`}
               </pre>
-              
+
               <h3>Basic Configuration:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Configuration
 @EnableWebSecurity
 public class SessionSecurityConfig {
@@ -185,7 +185,7 @@ public class SessionSecurityConfig {
                         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Session Expired");
                     }))
             );
-        
+
         return http.build();
     }
 }`}
@@ -194,7 +194,7 @@ public class SessionSecurityConfig {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Common Session Attacks & Mitigations</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Common Session Attacks & Mitigations</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
               <thead>
                 <tr className="bg-muted">
@@ -234,7 +234,7 @@ public class SessionSecurityConfig {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Best Practices for Session Management</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Best Practices for Session Management</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -249,21 +249,21 @@ public class SessionSecurityConfig {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Session Lifecycle</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    <li>Generate new session ID on successful login</li>
-                    <li>Invalidate session on logout</li>
-                    <li>Set reasonable timeout (e.g., 30 minutes)</li>
+                    <li>Generate a new session ID on successful login</li>
+                    <li>Invalidate the session on logout</li>
+                    <li>Set a reasonable timeout (e.g., 30 minutes)</li>
                     <li>Track active sessions per user</li>
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Password-Based Sessions</CardTitle>
@@ -277,7 +277,7 @@ public class SessionSecurityConfig {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Distributed Sessions</CardTitle>
@@ -286,7 +286,7 @@ public class SessionSecurityConfig {
                   <ul className="space-y-2">
                     <li>Use Redis or Hazelcast for cluster-wide sessions</li>
                     <li>Encrypt session data at rest</li>
-                    <li>Support sticky sessions in load balancer</li>
+                    <li>Support sticky sessions in the load balancer</li>
                     <li>Implement session replication across nodes</li>
                   </ul>
                 </CardContent>
@@ -297,13 +297,13 @@ public class SessionSecurityConfig {
 
         <TabsContent value="examples" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Basic Session Configuration</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Basic Session Configuration</h2>
             <Card>
               <CardHeader>
                 <CardTitle>SecurityConfig.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Configuration
 @EnableWebSecurity
 public class SessionConfig {
@@ -323,7 +323,7 @@ public class SessionConfig {
             .authorizeHttpRequests(auth -> auth
                 .anyRequest().authenticated()
             );
-        
+
         return http.build();
     }
 }`}
@@ -333,13 +333,13 @@ public class SessionConfig {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Distributed Session Store</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Distributed Session Store</h2>
             <Card>
               <CardHeader>
                 <CardTitle>application.properties</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`spring.session.store-type=redis
 spring.redis.host=localhost
 spring.redis.port=6379`}
@@ -351,7 +351,7 @@ spring.redis.port=6379`}
 
         <TabsContent value="exercises" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Practice Exercises</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Practice Exercises</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -360,14 +360,14 @@ spring.redis.port=6379`}
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
-                    <li>Create Spring Boot app with security starter</li>
+                    <li>Create a Spring Boot app with security starter</li>
                     <li>Configure session management in SecurityConfig</li>
                     <li>Set HttpOnly, Secure, and SameSite flags</li>
                     <li>Verify cookie properties in browser developer tools</li>
                   </ol>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 2: Concurrent Session Control</CardTitle>
@@ -382,11 +382,11 @@ spring.redis.port=6379`}
                   </ol>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Distributed Session Store</CardTitle>
-                  <CardDescription>Advanced level</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
@@ -404,7 +404,7 @@ spring.redis.port=6379`}
 
         <TabsContent value="resources" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Additional Resources</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Additional Resources</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -437,7 +437,7 @@ spring.redis.port=6379`}
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Books</CardTitle>
@@ -469,7 +469,7 @@ spring.redis.port=6379`}
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Articles & Tutorials</CardTitle>
@@ -501,7 +501,7 @@ spring.redis.port=6379`}
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Related Modules</CardTitle>
