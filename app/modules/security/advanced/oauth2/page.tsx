@@ -7,16 +7,9 @@ import Link from "next/link"
 
 export default function Oauth2SecurityModule() {
   return (
-    <div className="flex flex-col gap-8">
-      <div className="space-y-2">
-        <div className="flex flex-wrap items-center gap-2">
-          <h1 className="text-3xl font-bold tracking-tight">OAuth2 Integration</h1>
-          <Badge>Module 7.9</Badge>
-        </div>
-        <p className="text-muted-foreground">
-          Learn how to integrate OAuth2 authentication in Spring Boot applications using providers like Google, GitHub, and Azure AD
-        </p>
-      </div>
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold mb-8">OAuth2 Integration</h1>
+      <p className="text-muted-foreground mb-12">Module 7.9</p>
 
       <Tabs defaultValue="content" className="w-full">
         <TabsList className="grid w-full grid-cols-4 md:w-auto">
@@ -161,19 +154,21 @@ export default function Oauth2SecurityModule() {
               <h3>Add Dependency (Maven):</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`<dependency>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-oauth2-client</artifactId>
-</dependency>`}
-              </pre>
-              
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-oauth2-client</artifactId>
+</dependency>`}</pre>
+
               <h3>Configure in application.properties:</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-google-client-secret
+spring.security.oauth2.client.registration.google.scope=email,profile
+
 spring.security.oauth2.client.registration.github.client-id=your-github-client-id
-spring.security.oauth2.client.registration.github.client-secret=your-github-secret`}
-              </pre>
-              
+spring.security.oauth2.client.registration.github.client-secret=your-github-secret
+spring.security.oauth2.client.registration.github.authorization-grant-type=authorization_code
+spring.security.oauth2.client.registration.github.redirect-uri={baseUrl}/login/oauth2/code/{registrationId}`}</pre>
+
               <h3>Basic Security Configuration:</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Configuration
@@ -186,11 +181,9 @@ public class Oauth2Config {
                 .anyRequest().authenticated()
             )
             .oauth2Login(withDefaults());
-        
         return http.build();
     }
-}`}
-              </pre>
+}`}</pre>
             </div>
           </section>
 
@@ -211,8 +204,7 @@ public class Oauth2Config {
                     <pre className="bg-muted p-2 rounded text-sm overflow-x-auto">
 {`spring.security.oauth2.client.registration.google.client-id=your-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-secret
-spring.security.oauth2.client.registration.google.scope=email,profile`}
-                    </pre>
+spring.security.oauth2.client.registration.google.scope=email,profile`}</pre>
                   </td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Requires project setup in Cloud Console</td>
                 </tr>
@@ -223,8 +215,7 @@ spring.security.oauth2.client.registration.google.scope=email,profile`}
 {`spring.security.oauth2.client.registration.github.client-id=your-client-id
 spring.security.oauth2.client.registration.github.client-secret=your-secret
 spring.security.oauth2.client.registration.github.authorization-grant-type=authorization_code
-spring.security.oauth2.client.registration.github.redirect-uri={baseUrl}/login/oauth2/code/{registrationId}`}
-                    </pre>
+spring.security.oauth2.client.registration.github.redirect-uri={baseUrl}/login/oauth2/code/{registrationId}`}</pre>
                   </td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Set redirect URI in GitHub app settings</td>
                 </tr>
@@ -235,8 +226,7 @@ spring.security.oauth2.client.registration.github.redirect-uri={baseUrl}/login/o
 {`spring.security.oauth2.client.registration.azure.client-id=your-client-id
 spring.security.oauth2.client.registration.azure.client-secret=your-secret
 spring.security.oauth2.client.registration.azure.provider=azure
-spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}
-                    </pre>
+spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}</pre>
                   </td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Uses OpenID Connect under the hood</td>
                 </tr>
@@ -301,40 +291,39 @@ spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}
                     <li>Verify audience and issuer claims</li>
                   </ul>
                 </CardContent>
-              </card>
+              </Card>
             </div>
           </section>
-        </tabscontent>
+        </TabsContent>
 
-        <tabscontent value="examples" className="space-y-6">
+        <TabsContent value="examples" className="space-y-6">
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">OAuth2 Login Setup</h2>
-            <card>
-              <cardheader>
-                <cardtitle>application.properties</cardtitle>
-              </cardheader>
-              <cardcontent>
+            <Card>
+              <CardHeader>
+                <CardTitle>application.properties</CardTitle>
+              </CardHeader>
+              <CardContent>
                 <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-google-client-secret
-spring.security.oauth2.client.registration.google.scope=email,profile`}
-                </pre>
-              </cardcontent>
-            </card>
+spring.security.oauth2.client.registration.google.scope=email,profile`}</pre>
+              </CardContent>
+            </Card>
           </section>
 
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Calling Protected APIs</h2>
-            <card>
-              <cardheader>
-                <cardtitle>ProductService.java</cardtitle>
-              </cardheader>
-              <cardcontent>
+            <Card>
+              <CardHeader>
+                <CardTitle>ProductService.java</CardTitle>
+              </CardHeader>
+              <CardContent>
                 <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Service
 public class ProductService {
     private final WebClient webClient;
-
+    
     public ProductService(WebClient.Builder builder, OAuth2AuthorizedClientManager clientManager) {
         this.webClient = builder.baseUrl("https://product-api")
                                 .filter(exchangeFilterFunction(clientManager))
@@ -347,53 +336,52 @@ public class ProductService {
                         .retrieve()
                         .bodyToMono(Product.class);
     }
-}`}
-                </pre>
-              </cardcontent>
-            </card>
+}`}</pre>
+              </CardContent>
+            </Card>
           </section>
-        </tabscontent>
+        </TabsContent>
 
-        <tabscontent value="exercises" className="space-y-6">
+        <TabsContent value="exercises" className="space-y-6">
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Practice Exercises</h2>
             <div className="grid gap-4 md:grid-cols-2">
-              <card>
-                <cardheader>
-                  <cardtitle>Exercise 1: Basic OAuth2 Login</cardtitle>
-                  <carddescription>Beginner level</carddescription>
-                </cardheader>
-                <cardcontent>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Exercise 1: Basic OAuth2 Login</CardTitle>
+                  <CardDescription>Beginner level</CardDescription>
+                </CardHeader>
+                <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Create Spring Boot app with Web and Security dependencies</li>
                     <li>Register app in Google Cloud Console</li>
                     <li>Configure properties with client ID and secret</li>
                     <li>Test login with real Google account</li>
                   </ol>
-                </cardcontent>
-              </card>
+                </CardContent>
+              </Card>
               
-              <card>
-                <cardheader>
-                  <cardtitle>Exercise 2: Multiple Providers</cardtitle>
-                  <carddescription>Intermediate level</carddescription>
-                </cardheader>
-                <cardcontent>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Exercise 2: Multiple Providers</CardTitle>
+                  <CardDescription>Intermediate level</CardDescription>
+                </CardHeader>
+                <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Create system with Google, GitHub, and Azure logins</li>
                     <li>Display different UI based on provider</li>
                     <li>Map external roles to internal permissions</li>
                     <li>Test login with different providers</li>
                   </ol>
-                </cardcontent>
-              </card>
+                </CardContent>
+              </Card>
               
-              <card>
-                <cardheader>
-                  <cardtitle>Exercise 3: Token Propagation</cardtitle>
-                  <carddescription>Advanced level</carddescription>
-                </cardheader>
-                <cardcontent>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Exercise 3: Token Propagation</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
+                </CardHeader>
+                <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Create two Spring Boot services</li>
                     <li>Secure both with OAuth2 resource server</li>
@@ -401,21 +389,21 @@ public class ProductService {
                     <li>Ensure token is propagated correctly</li>
                     <li>Test behavior when token expires or is revoked</li>
                   </ol>
-                </cardcontent>
-              </card>
+                </CardContent>
+              </Card>
             </div>
           </section>
-        </tabscontent>
+        </TabsContent>
 
-        <tabscontent value="resources" className="space-y-6">
+        <TabsContent value="resources" className="space-y-6">
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Additional Resources</h2>
             <div className="grid gap-4 md:grid-cols-2">
-              <card>
-                <cardheader>
-                  <cardtitle>Official Documentation</cardtitle>
-                </cardheader>
-                <cardcontent>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Official Documentation</CardTitle>
+                </CardHeader>
+                <CardContent>
                   <ul className="space-y-2">
                     <li>
                       <a 
@@ -424,7 +412,7 @@ public class ProductService {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <externallink className="h-4 w-4" />
+                        <ExternalLink className="h-4 w-4" />
                         Spring Security OAuth2 Docs
                       </a>
                     </li>
@@ -435,19 +423,19 @@ public class ProductService {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <externallink className="h-4 w-4" />
+                        <ExternalLink className="h-4 w-4" />
                         OpenID Connect Specification
                       </a>
                     </li>
                   </ul>
-                </cardcontent>
-              </card>
+                </CardContent>
+              </Card>
               
-              <card>
-                <cardheader>
-                  <cardtitle>Books</cardtitle>
-                </cardheader>
-                <cardcontent>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Books</CardTitle>
+                </CardHeader>
+                <CardContent>
                   <ul className="space-y-2">
                     <li>
                       <a 
@@ -456,7 +444,7 @@ public class ProductService {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <bookopen className="h-4 w-4" />
+                        <BookOpen className="h-4 w-4" />
                         Securing Spring Microservices by Rajesh Ojha
                       </a>
                     </li>
@@ -467,19 +455,19 @@ public class ProductService {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <bookopen className="h-4 w-4" />
+                        <BookOpen className="h-4 w-4" />
                         Spring Security Cookbook by Gopal Dahale
                       </a>
                     </li>
                   </ul>
-                </cardcontent>
-              </card>
+                </CardContent>
+              </Card>
               
-              <card>
-                <cardheader>
-                  <cardtitle>Articles & Tutorials</cardtitle>
-                </cardheader>
-                <cardcontent>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Articles & Tutorials</CardTitle>
+                </CardHeader>
+                <CardContent>
                   <ul className="space-y-2">
                     <li>
                       <a 
@@ -488,7 +476,7 @@ public class ProductService {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <externallink className="h-4 w-4" />
+                        <ExternalLink className="h-4 w-4" />
                         Baeldung: OpenID Connect with Spring Security
                       </a>
                     </li>
@@ -499,62 +487,62 @@ public class ProductService {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <externallink className="h-4 w-4" />
+                        <ExternalLink className="h-4 w-4" />
                         Reflectoring: Spring OAuth2 Integration Guide
                       </a>
                     </li>
                   </ul>
-                </cardcontent>
-              </card>
+                </CardContent>
+              </Card>
               
-              <card>
-                <cardheader>
-                  <cardtitle>Related Modules</cardtitle>
-                </cardheader>
-                <cardcontent>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Related Modules</CardTitle>
+                </CardHeader>
+                <CardContent>
                   <ul className="space-y-2">
                     <li>
-                      <link 
+                      <Link 
                         href="/modules/security/basic/auth"
                         className="flex items-center gap-2 text-primary hover:underline"
                       >
-                        <bookopen className="h-4 w-4" />
+                        <BookOpen className="h-4 w-4" />
                         Authentication Module
-                      </link>
+                      </Link>
                     </li>
                     <li>
-                      <link 
+                      <Link 
                         href="/modules/security/advanced/jwt"
                         className="flex items-center gap-2 text-primary hover:underline"
                       >
-                        <bookopen className="h-4 w-4" />
+                        <BookOpen className="h-4 w-4" />
                         JSON Web Tokens Module
-                      </link>
+                      </Link>
                     </li>
                     <li>
-                      <link 
+                      <Link 
                         href="/modules/security/advanced/csrf"
                         className="flex items-center gap-2 text-primary hover:underline"
                       >
-                        <bookopen className="h-4 w-4" />
+                        <BookOpen className="h-4 w-4" />
                         Cross-Site Request Forgery Module
-                      </link>
+                      </Link>
                     </li>
                   </ul>
-                </cardcontent>
-              </card>
+                </CardContent>
+              </Card>
             </div>
           </section>
-        </tabscontent>
-      </tabs>
+        </TabsContent>
+      </Tabs>
 
-      <div className="flex justify-between">
-        <button variant="outline" asChild>
-          <link href="/modules/security/advanced/jwt">← JWT</link>
-        </button>
-        <button asChild>
-          <link href="/modules/security/advanced/session">Next: Session Management →</link>
-        </button>
+      <div className="flex justify-between mt-8">
+        <Button variant="outline" asChild>
+          <Link href="/modules/security/advanced/jwt">← JWT</Link>
+        </Button>
+        <Button asChild>
+          <Link href="/modules/security/advanced/session">Next: Session Management →</Link>
+        </Button>
       </div>
     </div>
   )
