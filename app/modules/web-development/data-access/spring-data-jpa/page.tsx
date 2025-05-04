@@ -115,7 +115,7 @@ export default function SpringDataJpaModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Common Repository Methods</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Common Repository Methods</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
               <thead>
                 <tr className="bg-muted">
@@ -155,14 +155,14 @@ export default function SpringDataJpaModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Implementing Spring Data JPA in Spring Boot</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Implementing Spring Data JPA in Spring Boot</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 To implement Spring Data JPA in your Spring Boot application:
               </p>
               
               <h3>Add Dependency (Maven):</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`<dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -170,7 +170,7 @@ export default function SpringDataJpaModule() {
               </pre>
               
               <h3>Create Entity Class:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Entity
 @Data
 @NoArgsConstructor
@@ -186,7 +186,7 @@ public class Product {
               </pre>
               
               <h3>Define Repository Interface:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByNameContaining(String keyword);
     
@@ -201,7 +201,7 @@ public class Product {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Query Derivation Examples</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Query Derivation Examples</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
               <thead>
                 <tr className="bg-muted">
@@ -261,7 +261,7 @@ public class Product {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Best Practices for Spring Data JPA</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Best Practices for Spring Data JPA</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -324,13 +324,13 @@ public class Product {
 
         <TabsContent value="examples" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Basic Repository Interface</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Basic Repository Interface</h2>
             <Card>
               <CardHeader>
                 <CardTitle>ProductRepository.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByNameContaining(String keyword);
     
@@ -346,13 +346,13 @@ public class Product {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Custom Query Example</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Custom Query Example</h2>
             <Card>
               <CardHeader>
                 <CardTitle>OrderRepository.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`public interface OrderRepository extends JpaRepository<Order, Long> {
     @Query(value = "SELECT o FROM Order o JOIN FETCH o.items WHERE o.user.id = :userId")
     List<Order> findOrdersWithItemsByUserId(@Param("userId") Long userId);
@@ -369,7 +369,7 @@ public class Product {
 
         <TabsContent value="exercises" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Practice Exercises</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Practice Exercises</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -421,7 +421,7 @@ public class Product {
 
         <TabsContent value="resources" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Additional Resources</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Additional Resources</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
