@@ -7,10 +7,12 @@ import Link from "next/link"
 
 export default function Oauth2SecurityModule() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-8">OAuth2 Integration</h1>
-      <p className="text-muted-foreground mb-12">Module 7.9</p>
-
+    <div>
+      <h1 className="text-3xl font-bold">OAuth2 Integration</h1>
+      <p className="text-lg mt-2">Module 7.9</p>
+      <p>
+        Learn how to integrate OAuth2 authentication in Spring Boot applications using providers like Google, GitHub, and Azure AD.
+      </p>
       <Tabs defaultValue="content" className="w-full">
         <TabsList className="grid w-full grid-cols-4 md:w-auto">
           <TabsTrigger value="content">Content</TabsTrigger>
@@ -20,6 +22,7 @@ export default function Oauth2SecurityModule() {
         </TabsList>
 
         <TabsContent value="content" className="space-y-6">
+          {/* Section: What is OAuth2? */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">What is OAuth2?</h2>
             <div className="prose dark:prose-invert max-w-none">
@@ -27,7 +30,6 @@ export default function Oauth2SecurityModule() {
                 OAuth2 is an open standard for authorization that allows third-party services to access user data without exposing credentials.
                 In Spring Security, it's commonly used for social login (Google, GitHub, Facebook) and enterprise SSO (Azure AD, Okta).
               </p>
-              
               <p>The main components of OAuth2:</p>
               <ul>
                 <li><strong>Resource Owner:</strong> The user who authorizes access</li>
@@ -35,7 +37,6 @@ export default function Oauth2SecurityModule() {
                 <li><strong>Resource Server:</strong> The API being accessed</li>
                 <li><strong>Authorization Server:</strong> Issues tokens after successful authentication</li>
               </ul>
-              
               <p>
                 Spring Security provides built-in support for OAuth2 through the 
                 <code>spring-security-oauth2-client</code> and <code>spring-security-oauth2-resource-server</code> modules.
@@ -43,6 +44,7 @@ export default function Oauth2SecurityModule() {
             </div>
           </section>
 
+          {/* Section: OAuth2 Flows */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">OAuth2 Flows</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
@@ -83,6 +85,7 @@ export default function Oauth2SecurityModule() {
             </table>
           </section>
 
+          {/* Section: Why Use OAuth2? */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Why Use OAuth2?</h2>
             <div className="grid gap-4 md:grid-cols-2">
@@ -99,7 +102,7 @@ export default function Oauth2SecurityModule() {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Security Benefits</CardTitle>
@@ -113,7 +116,7 @@ export default function Oauth2SecurityModule() {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Enterprise Integration</CardTitle>
@@ -127,7 +130,7 @@ export default function Oauth2SecurityModule() {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Microservices Communication</CardTitle>
@@ -144,34 +147,28 @@ export default function Oauth2SecurityModule() {
             </div>
           </section>
 
+          {/* Section: Implementing OAuth2 in Spring Boot */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Implementing OAuth2 in Spring Boot</h2>
             <div className="prose dark:prose-invert max-w-none">
-              <p>
-                To implement OAuth2 integration in Spring Boot:
-              </p>
-              
+              <p>To implement OAuth2 integration in Spring Boot:</p>
               <h3>Add Dependency (Maven):</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
-{`<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-oauth2-client</artifactId>
-</dependency>`}</pre>
-
+                {`<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-oauth2-client</artifactId>
+</dependency>`}
+              </pre>
               <h3>Configure in application.properties:</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
-{`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
+                {`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-google-client-secret
-spring.security.oauth2.client.registration.google.scope=email,profile
-
 spring.security.oauth2.client.registration.github.client-id=your-github-client-id
-spring.security.oauth2.client.registration.github.client-secret=your-github-secret
-spring.security.oauth2.client.registration.github.authorization-grant-type=authorization_code
-spring.security.oauth2.client.registration.github.redirect-uri={baseUrl}/login/oauth2/code/{registrationId}`}</pre>
-
+spring.security.oauth2.client.registration.github.client-secret=your-github-secret`}
+              </pre>
               <h3>Basic Security Configuration:</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
-{`@Configuration
+                {`@Configuration
 @EnableWebSecurity
 public class Oauth2Config {
     @Bean
@@ -183,10 +180,12 @@ public class Oauth2Config {
             .oauth2Login(withDefaults());
         return http.build();
     }
-}`}</pre>
+}`}
+              </pre>
             </div>
           </section>
 
+          {/* Section: OAuth2 Providers & Configuration */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">OAuth2 Providers & Configuration</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
@@ -202,38 +201,45 @@ public class Oauth2Config {
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>Google</code></td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">
                     <pre className="bg-muted p-2 rounded text-sm overflow-x-auto">
-{`spring.security.oauth2.client.registration.google.client-id=your-client-id
+                      {`spring.security.oauth2.client.registration.google.client-id=your-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-secret
-spring.security.oauth2.client.registration.google.scope=email,profile`}</pre>
+spring.security.oauth2.client.registration.google.scope=email,profile`}
+                    </pre>
+                    <p>Requires project setup in Cloud Console</p>
                   </td>
-                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Requires project setup in Cloud Console</td>
+                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Add necessary redirect URIs in your Google console</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>GitHub</code></td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">
                     <pre className="bg-muted p-2 rounded text-sm overflow-x-auto">
-{`spring.security.oauth2.client.registration.github.client-id=your-client-id
+                      {`spring.security.oauth2.client.registration.github.client-id=your-client-id
 spring.security.oauth2.client.registration.github.client-secret=your-secret
 spring.security.oauth2.client.registration.github.authorization-grant-type=authorization_code
-spring.security.oauth2.client.registration.github.redirect-uri={baseUrl}/login/oauth2/code/{registrationId}`}</pre>
+spring.security.oauth2.client.registration.github.redirect-uri={baseUrl}/login/oauth2/code/{registrationId}`}
+                    </pre>
+                    <p>Set redirect URI in GitHub app settings</p>
                   </td>
-                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Set redirect URI in GitHub app settings</td>
+                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Make sure to configure the app correctly in GitHub settings</td>
                 </tr>
                 <tr>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>Azure AD</code></td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">
                     <pre className="bg-muted p-2 rounded text-sm overflow-x-auto">
-{`spring.security.oauth2.client.registration.azure.client-id=your-client-id
+                      {`spring.security.oauth2.client.registration.azure.client-id=your-client-id
 spring.security.oauth2.client.registration.azure.client-secret=your-secret
 spring.security.oauth2.client.registration.azure.provider=azure
-spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}</pre>
+spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}
+                    </pre>
+                    <p>Uses OpenID Connect under the hood</p>
                   </td>
-                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Uses OpenID Connect under the hood</td>
+                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Ensure you have set up Azure AD appropriately</td>
                 </tr>
               </tbody>
             </table>
           </section>
 
+          {/* Section: Best Practices for OAuth2 Implementation */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Best Practices for OAuth2 Implementation</h2>
             <div className="grid gap-4 md:grid-cols-2">
@@ -250,7 +256,7 @@ spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}</p
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Error Handling</CardTitle>
@@ -264,7 +270,7 @@ spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}</p
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Token Management</CardTitle>
@@ -278,7 +284,7 @@ spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}</p
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Security Considerations</CardTitle>
@@ -297,6 +303,7 @@ spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}</p
         </TabsContent>
 
         <TabsContent value="examples" className="space-y-6">
+          {/* Example Sections */}
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">OAuth2 Login Setup</h2>
             <Card>
@@ -305,9 +312,10 @@ spring.security.oauth2.client.registration.azure.scope=email,profile,openid`}</p
               </CardHeader>
               <CardContent>
                 <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
-{`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
+                  {`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-google-client-secret
-spring.security.oauth2.client.registration.google.scope=email,profile`}</pre>
+spring.security.oauth2.client.registration.google.scope=email,profile`}
+                </pre>
               </CardContent>
             </Card>
           </section>
@@ -320,10 +328,10 @@ spring.security.oauth2.client.registration.google.scope=email,profile`}</pre>
               </CardHeader>
               <CardContent>
                 <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
-{`@Service
+                  {`@Service
 public class ProductService {
     private final WebClient webClient;
-    
+
     public ProductService(WebClient.Builder builder, OAuth2AuthorizedClientManager clientManager) {
         this.webClient = builder.baseUrl("https://product-api")
                                 .filter(exchangeFilterFunction(clientManager))
@@ -336,7 +344,8 @@ public class ProductService {
                         .retrieve()
                         .bodyToMono(Product.class);
     }
-}`}</pre>
+}`}
+                </pre>
               </CardContent>
             </Card>
           </section>
@@ -360,7 +369,7 @@ public class ProductService {
                   </ol>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 2: Multiple Providers</CardTitle>
@@ -375,7 +384,7 @@ public class ProductService {
                   </ol>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Token Propagation</CardTitle>
@@ -430,7 +439,7 @@ public class ProductService {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Books</CardTitle>
@@ -462,7 +471,7 @@ public class ProductService {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Articles & Tutorials</CardTitle>
@@ -494,7 +503,7 @@ public class ProductService {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Related Modules</CardTitle>
@@ -536,7 +545,7 @@ public class ProductService {
         </TabsContent>
       </Tabs>
 
-      <div className="flex justify-between mt-8">
+      <div className="flex justify-between mt-4">
         <Button variant="outline" asChild>
           <Link href="/modules/security/advanced/jwt">← JWT</Link>
         </Button>
