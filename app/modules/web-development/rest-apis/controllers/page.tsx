@@ -416,7 +416,7 @@ public class OrderController {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Filterable Product Controller</CardTitle>
-                  <CardDescription>Advanced level</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
