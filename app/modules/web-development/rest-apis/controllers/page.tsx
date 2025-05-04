@@ -153,14 +153,14 @@ export default function RestControllersModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Implementing Controllers in Spring Boot</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Implementing Controllers in Spring Boot</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 To implement REST controllers in Spring Boot:
               </p>
               
               <h3>Basic Controller Example:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -179,7 +179,7 @@ public class UserController {
               </pre>
               
               <h3>Using Request Mapping:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@RestController
 @RequestMapping(path = "/api/products", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ProductController {
@@ -199,7 +199,7 @@ public class ProductController {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Common Controller Patterns</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Common Controller Patterns</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
               <thead>
                 <tr className="bg-muted">
@@ -245,7 +245,7 @@ public class ProductController {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Best Practices for REST Controllers</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Best Practices for REST Controllers</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -314,7 +314,7 @@ public class ProductController {
                 <CardTitle>UserController.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -348,7 +348,7 @@ public class UserController {
                 <CardTitle>OrderController.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@RestController
 @RequestMapping("/api/orders")
 public class OrderController {
