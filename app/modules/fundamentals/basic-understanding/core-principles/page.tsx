@@ -26,221 +26,220 @@ export default function CorePrinciples() {
           <TabsTrigger value="resources">Resources</TabsTrigger>
         </TabsList>
         
-        <TabsContent value="content" className="space-y-6">
-          <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Introduction to Spring Core Principles</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                The Spring Framework is built on several core principles that enable the creation of robust, 
-                maintainable, and testable applications. These principles form the foundation of Spring's approach 
-                to enterprise application development.
-              </p>
-              <p>
-                Understanding these core principles is essential for effectively using Spring and building 
-                applications that leverage its full capabilities.
-              </p>
-            </div>
-          </section>
-          
-          <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Inversion of Control (IoC)</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                Inversion of Control (IoC) is a design principle where the control flow of a program is inverted compared 
-                to traditional procedural programming. Instead of the programmer controlling the flow of execution, 
-                this control is handed over to a framework or container.
-              </p>
-              
-              <h3>Key Concepts of IoC</h3>
-              <ul>
-                <li><strong>Framework Control:</strong> The framework manages the overall flow of the application</li>
-                <li><strong>Pluggable Components:</strong> Developers provide components that are plugged into the framework</li>
-                <li><strong>Decoupling:</strong> Components are decoupled from the framework implementation</li>
-              </ul>
-              
-              <h3>Benefits of IoC</h3>
-              <ul>
-                <li>Loose coupling between components</li>
-                <li>Improved testability of components</li>
-                <li>Greater flexibility in component implementation</li>
-                <li>Easier maintenance and extension of functionality</li>
-              </ul>
-            </div>
-          </section>
-          
-          <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Dependency Injection (DI)</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                Dependency Injection (DI) is a specific implementation of the IoC principle where an object's dependencies 
-                are provided by an external entity rather than being created internally. This allows for greater flexibility 
-                and easier testing of components.
-              </p>
-              
-              <h3>Types of Dependency Injection</h3>
-              
-              <h4>1. Constructor Injection</h4>
-              <p>
-                Dependencies are provided through a class constructor. This is the preferred method as it ensures 
-                required dependencies are available when an object is created.
-              </p>
-              
-              <h4>2. Setter Injection</h4>
-              <p>
-                Dependencies are provided through setter methods. Useful for optional dependencies or when 
-                immutability isn't required.
-              </p>
-              
-              <h4>3. Field Injection</h4>
-              <p>
-                Dependencies are injected directly into fields using annotations like @Autowired. While convenient, 
-                this approach can make testing more difficult.
-              </p>
-              
-              <h3>Best Practices for DI</h3>
-              <ul>
-                <li>Use constructor injection for mandatory dependencies</li>
-                <li>Use setter injection for optional dependencies</li>
-                <li>Avoid field injection when possible for better testability</li>
-                <li>Keep constructors focused and limited in the number of parameters</li>
-                <li>Make classes final when appropriate to prevent unintended subclassing</li>
-              </ul>
-            </div>
-          </section>
-          
-          <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Single Responsibility Principle (SRP)</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                The Single Responsibility Principle states that a class should have only one reason to change. This 
-                principle helps ensure that each component has a clear, well-defined purpose.
-              </p>
-              
-              <h3>Applying SRP in Spring</h3>
-              <ul>
-                <li>Controllers handle HTTP requests/responses</li>
-                <li>Services contain business logic</li>
-                <li>Repositories manage data persistence</li>
-                <li>Components encapsulate specific functionalities</li>
-              </ul>
-              
-              <h3>Benefits of SRP</h3>
-              <ul>
-                <li>Improved code readability and maintainability</li>
-                <li>Easier testing and debugging</li>
-                <li>Reduced risk of side effects during modifications</li>
-                <li>Better organization of codebase</li>
-              </ul>
-            </div>
-          </section>
-          
-          <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Open/Closed Principle (OCP)</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                The Open/Closed Principle states that software entities should be open for extension but closed for modification. 
-                This means that new functionality should be added by extending existing code rather than modifying it.
-              </p>
-              
-              <h3>Implementing OCP in Spring</h3>
-              <ul>
-                <li>Using interfaces to define contracts that can be extended</li>
-                <li>Leveraging Spring's extensibility points through interceptors and listeners</li>
-                <li>Creating pluggable modules that can be added without changing core logic</li>
-                <li>Utilizing strategy patterns to allow different implementations</li>
-              </ul>
-              
-              <h3>Benefits of OCP</h3>
-              <ul>
-                <li>Reduced risk of breaking existing functionality</li>
-                <li>Improved code reuse</li>
-                <li>Easier system upgrades and enhancements</li>
-                <li>Better support for polymorphism and abstraction</li>
-              </ul>
-            </div>
-          </section>
-          
-          <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Liskov Substitution Principle (LSP)</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                The Liskov Substitution Principle states that objects of a superclass should be replaceable with objects 
-                of its subclasses without affecting the correctness of the application. This principle ensures proper 
-                inheritance and abstraction.
-              </p>
-              
-              <h3>Applying LSP in Spring</h3>
-              <ul>
-                <li>Designing proper inheritance hierarchies for domain models</li>
-                <li>Ensuring consistent behavior across implementations of interfaces</li>
-                <li>Maintaining contract compliance when extending abstract classes</li>
-                <li>Proper exception handling across inherited methods</li>
-              </ul>
-              
-              <h3>Violations to Avoid</h3>
-              <ul>
-                <li>Throwing exceptions in child classes not declared in parent</li>
-                <li>Changing method signatures in ways that break expected behavior</li>
-                <li>Modifying preconditions to be stricter than in parent classes</li>
-                <li>Changing the meaning of methods in derived classes</li>
-              </ul>
-            </div>
-          </section>
-          
-          <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Interface Segregation Principle (ISP)</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                The Interface Segregation Principle states that no client should be forced to depend on methods it does 
-                not use. This principle encourages the creation of fine-grained interfaces tailored to specific clients.
-              </p>
-              
-              <h3>Implementing ISP in Spring</h3>
-              <ul>
-                <li>Creating specific interfaces for different service consumers</li>
-                <li>Avoiding "fat" interfaces with many unrelated methods</li>
-                <li>Allowing multiple interface implementations per class</li>
-                <li>Grouping related operations into cohesive interface sets</li>
-              </ul>
-              
-              <h3>Benefits of ISP</h3>
-              <ul>
-                <li>Reduced dependency on unused methods</li>
-                <li>Better separation of concerns</li>
-                <li>Improved code maintainability</li>
-                <li>More flexible system design</li>
-              </ul>
-            </div>
-          </section>
-          
-          <section className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Dependency Inversion Principle (DIP)</h2>
-            <div className="prose dark:prose-invert max-w-none">
-              <p>
-                The Dependency Inversion Principle states that high-level modules should not depend on low-level modules; 
-                both should depend on abstractions. Additionally, abstractions should not depend on details; details 
-                should depend on abstractions.
-              </p>
-              
-              <h3>Implementing DIP in Spring</h3>
-              <ul>
-                <li>Programming to interfaces rather than concrete implementations</li>
-                <li>Using Spring's DI mechanism to inject dependencies</li>
-                <li>Defining service contracts through interfaces</li>
-                <li>Allowing configuration-driven implementation selection</li>
-              </ul>
-              
-              <h3>Benefits of DIP</h3>
-              <ul>
-                <li>Reduced coupling between application layers</li>
-                <li>Increased modularity</li>
-                <li>Easier substitution of implementations</li>
-                <li>Better support for testing and mocking</li>
-              </ul>
-            </div>
-          </section>
-        </TabsContent>
-        
+       <TabsContent value="content" className="space-y-6">
+  {/* Introduction */}
+  <section className="space-y-4">
+    <h2 className="text-2xl font-bold tracking-tight">Introduction to Spring Core Principles</h2>
+    <div className="prose dark:prose-invert max-w-none">
+      <p>
+        The Spring Framework is built on several core principles that enable the creation of robust, 
+        maintainable, and testable applications. These principles form the foundation of Spring's approach 
+        to enterprise application development.
+      </p>
+      <p>
+        Understanding these core principles is essential for effectively using Spring and building applications 
+        that leverage its full capabilities.
+      </p>
+    </div>
+  </section>
+  
+  {/* IoC */}
+  <section className="space-y-4">
+    <h2 className="text-2xl font-bold tracking-tight">Inversion of Control (IoC)</h2>
+    <div className="prose dark:prose-invert max-w-none">
+      <p>
+        Inversion of Control (IoC) is a design principle where the control flow of a program is inverted compared 
+        to traditional procedural programming. Instead of the programmer controlling the flow of execution, 
+        this control is handed over to a framework or container.
+      </p>
+      <h3>Key Concepts of IoC</h3>
+      <ul>
+        <li><strong>Framework Control:</strong> The framework manages the overall flow of the application</li>
+        <li><strong>Pluggable Components:</strong> Developers provide components that are plugged into the framework</li>
+        <li><strong>Decoupling:</strong> Components are decoupled from the framework implementation</li>
+      </ul>
+      <h3>Benefits of IoC</h3>
+      <ul>
+        <li>Loose coupling between components</li>
+        <li>Improved testability of components</li>
+        <li>Greater flexibility in component implementation</li>
+        <li>Easier maintenance and extension of functionality</li>
+      </ul>
+    </div>
+  </section>
+  
+  {/* DI */}
+  <section className="space-y-4">
+    <h2 className="text-2xl font-bold tracking-tight">Dependency Injection (DI)</h2>
+    <div className="prose dark:prose-invert max-w-none">
+      <p>
+        Dependency Injection (DI) is a specific implementation of the IoC principle where an object's dependencies 
+        are provided by an external entity rather than being created internally. This allows for greater flexibility 
+        and easier testing of components.
+      </p>
+      <h3>Types of Dependency Injection</h3>
+      <ol>
+        <li>
+          <strong>Constructor Injection:</strong>
+          <p>
+            Dependencies are provided through a class constructor. This is the preferred method as it ensures 
+            required dependencies are available when an object is created.
+          </p>
+        </li>
+        <li>
+          <strong>Setter Injection:</strong>
+          <p>
+            Dependencies are provided through setter methods. Useful for optional dependencies or when 
+            immutability isn't required.
+          </p>
+        </li>
+        <li>
+          <strong>Field Injection:</strong>
+          <p>
+            Dependencies are injected directly into fields using annotations like <code>@Autowired</code>. While convenient, 
+            this approach can make testing more difficult.
+          </p>
+        </li>
+      </ol>
+      <h3>Best Practices for DI</h3>
+      <ul>
+        <li>Use constructor injection for mandatory dependencies</li>
+        <li>Use setter injection for optional dependencies</li>
+        <li>Avoid field injection when possible for better testability</li>
+        <li>Keep constructors focused and limited in the number of parameters</li>
+        <li>Make classes final when appropriate to prevent unintended subclassing</li>
+      </ul>
+    </div>
+  </section>
+  
+  {/* SRP */}
+  <section className="space-y-4">
+    <h2 className="text-2xl font-bold tracking-tight">Single Responsibility Principle (SRP)</h2>
+    <div className="prose dark:prose-invert max-w-none">
+      <p>
+        The Single Responsibility Principle states that a class should have only one reason to change. This 
+        principle helps ensure that each component has a clear, well-defined purpose.
+      </p>
+      <h3>Applying SRP in Spring</h3>
+      <ul>
+        <li>Controllers handle HTTP requests/responses</li>
+        <li>Services contain business logic</li>
+        <li>Repositories manage data persistence</li>
+        <li>Components encapsulate specific functionalities</li>
+      </ul>
+      <h3>Benefits of SRP</h3>
+      <ul>
+        <li>Improved code readability and maintainability</li>
+        <li>Easier testing and debugging</li>
+        <li>Reduced risk of side effects during modifications</li>
+        <li>Better organization of codebase</li>
+      </ul>
+    </div>
+  </section>
+  
+  {/* OCP */}
+  <section className="space-y-4">
+    <h2 className="text-2xl font-bold tracking-tight">Open/Closed Principle (OCP)</h2>
+    <div className="prose dark:prose-invert max-w-none">
+      <p>
+        The Open/Closed Principle states that software entities should be open for extension but closed for modification. 
+        This means that new functionality should be added by extending existing code rather than modifying it.
+      </p>
+      <h3>Implementing OCP in Spring</h3>
+      <ul>
+        <li>Using interfaces to define contracts that can be extended</li>
+        <li>Leveraging Spring's extensibility points through interceptors and listeners</li>
+        <li>Creating pluggable modules that can be added without changing core logic</li>
+        <li>Utilizing strategy patterns to allow different implementations</li>
+      </ul>
+      <h3>Benefits of OCP</h3>
+      <ul>
+        <li>Reduced risk of breaking existing functionality</li>
+        <li>Improved code reuse</li>
+        <li>Easier system upgrades and enhancements</li>
+        <li>Better support for polymorphism and abstraction</li>
+      </ul>
+    </div>
+  </section>
+  
+  {/* LSP */}
+  <section className="space-y-4">
+    <h2 className="text-2xl font-bold tracking-tight">Liskov Substitution Principle (LSP)</h2>
+    <div className="prose dark:prose-invert max-w-none">
+      <p>
+        The Liskov Substitution Principle states that objects of a superclass should be replaceable with objects 
+        of its subclasses without affecting the correctness of the application. This principle ensures proper 
+        inheritance and abstraction.
+      </p>
+      <h3>Applying LSP in Spring</h3>
+      <ul>
+        <li>Designing proper inheritance hierarchies for domain models</li>
+        <li>Ensuring consistent behavior across implementations of interfaces</li>
+        <li>Maintaining contract compliance when extending abstract classes</li>
+        <li>Proper exception handling across inherited methods</li>
+      </ul>
+      <h3>Violations to Avoid</h3>
+      <ul>
+        <li>Throwing exceptions in child classes not declared in parent</li>
+        <li>Changing method signatures in ways that break expected behavior</li>
+        <li>Modifying preconditions to be stricter than in parent classes</li>
+        <li>Changing the meaning of methods in derived classes</li>
+      </ul>
+    </div>
+  </section>
+  
+  {/* ISP */}
+  <section className="space-y-4">
+    <h2 className="text-2xl font-bold tracking-tight">Interface Segregation Principle (ISP)</h2>
+    <div className="prose dark:prose-invert max-w-none">
+      <p>
+        The Interface Segregation Principle states that no client should be forced to depend on methods it does 
+        not use. This principle encourages the creation of fine-grained interfaces tailored to specific clients.
+      </p>
+      <h3>Implementing ISP in Spring</h3>
+      <ul>
+        <li>Creating specific interfaces for different service consumers</li>
+        <li>Avoiding "fat" interfaces with many unrelated methods</li>
+        <li>Allowing multiple interface implementations per class</li>
+        <li>Grouping related operations into cohesive interface sets</li>
+      </ul>
+      <h3>Benefits of ISP</h3>
+      <ul>
+        <li>Reduced dependency on unused methods</li>
+        <li>Better separation of concerns</li>
+        <li>Improved code maintainability</li>
+        <li>More flexible system design</li>
+      </ul>
+    </div>
+  </section>
+  
+  {/* DIP */}
+  <section className="space-y-4">
+    <h2 className="text-2xl font-bold tracking-tight">Dependency Inversion Principle (DIP)</h2>
+    <div className="prose dark:prose-invert max-w-none">
+      <p>
+        The Dependency Inversion Principle states that high-level modules should not depend on low-level modules; 
+        both should depend on abstractions. Additionally, abstractions should not depend on details; details 
+        should depend on abstractions.
+      </p>
+      <h3>Implementing DIP in Spring</h3>
+      <ul>
+        <li>Programming to interfaces rather than concrete implementations</li>
+        <li>Using Spring's DI mechanism to inject dependencies</li>
+        <li>Defining service contracts through interfaces</li>
+        <li>Allowing configuration-driven implementation selection</li>
+      </ul>
+      <h3>Benefits of DIP</h3>
+      <ul>
+        <li>Reduced coupling between application layers</li>
+        <li>Increased modularity</li>
+        <li>Easier substitution of implementations</li>
+        <li>Better support for testing and mocking</li>
+      </ul>
+    </div>
+  </section>
+</TabsContent>
+
         <TabsContent value="examples" className="space-y-6">
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">IoC Example: Application Context</h2>
