@@ -160,7 +160,7 @@ export default function SecurityIntegrationModule() {
               </p>
               
               <h3>Add Dependency (Maven):</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`<dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-oauth2-client</artifactId>
@@ -168,7 +168,7 @@ export default function SecurityIntegrationModule() {
               </pre>
               
               <h3>Configure in application.properties:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-google-client-secret
 spring.security.oauth2.client.registration.github.client-id=your-github-client-id
@@ -176,7 +176,7 @@ spring.security.oauth2.client.registration.github.client-secret=your-github-secr
               </pre>
               
               <h3>Basic Security Configuration:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@Configuration
 @EnableWebSecurity
 public class Oauth2Config {
@@ -203,7 +203,7 @@ public class Oauth2Config {
                   <CardTitle>Build File</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`<!-- Maven -->
 <dependency>
   <groupId>org.springframework.boot</groupId>
@@ -226,7 +226,7 @@ public class Oauth2Config {
                   <CardTitle>application.properties</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`spring.ldap.urls=ldap://localhost:389
 spring.ldap.base=dc=example,dc=com
 spring.ldap.username=cn=admin,dc=example,dc=com
@@ -241,7 +241,7 @@ spring.security.user.ldap.enabled=true`}
                   <CardTitle>Security Configuration</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Configuration
 @EnableWebSecurity
 public class LdapSecurityConfig {
@@ -266,7 +266,7 @@ public class LdapSecurityConfig {
                   <CardTitle>LDAP Schema Example</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                  <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`dn: dc=example,dc=com
 objectClass: top
 objectClass: domain
@@ -289,7 +289,7 @@ userPassword: secure-password`}
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Best Practices for Security Integration</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Best Practices for Security Integration</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -358,7 +358,7 @@ userPassword: secure-password`}
                 <CardTitle>application.properties</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`spring.security.oauth2.client.registration.google.client-id=your-google-client-id
 spring.security.oauth2.client.registration.google.client-secret=your-google-client-secret
 spring.security.oauth2.client.registration.google.scope=email,profile`}
@@ -374,7 +374,7 @@ spring.security.oauth2.client.registration.google.scope=email,profile`}
                 <CardTitle>ProductService.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Service
 public class ProductService {
     private final WebClient webClient;
@@ -435,7 +435,7 @@ public class ProductService {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Token Propagation</CardTitle>
-                  <CardDescription>Advanced level</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
