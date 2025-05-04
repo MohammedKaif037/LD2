@@ -155,14 +155,14 @@ export default function RestRequestResponseModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Implementing Request/Response in Spring Boot</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Implementing Request/Response in Spring Boot</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 To implement effective request/response handling in Spring Boot:
               </p>
               
               <h3>Basic Controller Example:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -181,7 +181,7 @@ public class UserController {
               </pre>
               
               <h3>Using ResponseEntity for Control:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@PostMapping
 public ResponseEntity<Void> createUser(@RequestBody UserRequest request) {
     User created = userService.create(request.toUser());
@@ -190,7 +190,7 @@ public ResponseEntity<Void> createUser(@RequestBody UserRequest request) {
               </pre>
               
               <h3>Reading Headers and Cookies:</h3>
-              <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm mt-2">
+              <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`@GetMapping("/profile")
 public ResponseEntity<UserProfile> getProfile(
     @RequestHeader("Authorization") String authHeader,
@@ -203,7 +203,7 @@ public ResponseEntity<UserProfile> getProfile(
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Common Request Types & Handling</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Common Request Types & Handling</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
               <thead>
                 <tr className="bg-muted">
@@ -243,7 +243,7 @@ public ResponseEntity<UserProfile> getProfile(
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Best Practices for Request/Response Handling</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Best Practices for Request/Response Handling</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -312,7 +312,7 @@ public ResponseEntity<UserProfile> getProfile(
                 <CardTitle>UserController.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -340,7 +340,7 @@ public class UserController {
                 <CardTitle>ApiResponse.java</CardTitle>
               </CardHeader>
               <CardContent>
-                <pre className="bg-muted p-4 rounded-md overflow-xauto text-sm">
+                <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
 {`@Data
 @NoArgsConstructor
 @AllArgsConstructor
