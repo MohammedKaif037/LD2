@@ -34,15 +34,15 @@ export default function CsrfProtectionModule() {
                 Cross-Site Request Forgery (CSRF) is an attack that forces an end user to execute unwanted actions on a web application where they are currently authenticated.
                 With Spring Security, CSRF protection is enabled by default for web applications.
               </p>
-              
+
               <p>How CSRF attacks typically work:</p>
               <ol>
-                <li>User logs into secure site (e.g., banking app)</li>
-                <li>Without logging out, visits malicious website</li>
-                <li>Malicious site sends request to secure site using user's credentials</li>
-                <li>Secure site processes request because user is still logged in</li>
+                <li>User logs into a secure site (e.g., banking app)</li>
+                <li>Without logging out, they visit a malicious website</li>
+                <li>The malicious site sends a request to the secure site using the user's credentials</li>
+                <li>The secure site processes the request because the user is still logged in</li>
               </ol>
-              
+
               <p>
                 In Spring Security, CSRF protection works by generating and validating tokens for each state-changing request,
                 ensuring the request originated from your own application.
@@ -51,7 +51,7 @@ export default function CsrfProtectionModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">CSRF Protection Mechanisms</h2>
+            <h2 className="text-2xl font-bold tracking-tight">CSRF Protection Mechanisms</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
               <thead>
                 <tr className="bg-muted">
@@ -63,7 +63,7 @@ export default function CsrfProtectionModule() {
               <tbody>
                 <tr>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>Synchronizer Token Pattern</code></td>
-                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Server generates unique token per session</td>
+                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Server generates a unique token per session</td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Standard web apps with forms</td>
                 </tr>
                 <tr>
@@ -91,7 +91,7 @@ export default function CsrfProtectionModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Why Protect Against CSRF?</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Why Protect Against CSRF?</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -106,7 +106,7 @@ export default function CsrfProtectionModule() {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Compliance & Trust</CardTitle>
@@ -120,7 +120,7 @@ export default function CsrfProtectionModule() {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Application Stability</CardTitle>
@@ -134,7 +134,7 @@ export default function CsrfProtectionModule() {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Modern Web Standards</CardTitle>
@@ -152,25 +152,25 @@ export default function CsrfProtectionModule() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Implementing CSRF Protection in Spring</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Implementing CSRF Protection in Spring</h2>
             <div className="prose dark:prose-invert max-w-none">
               <p>
                 Spring Security enables CSRF protection by default for web applications. It uses the Synchronizer Token Pattern
                 to generate and validate tokens for form submissions and AJAX requests.
               </p>
-              
+
               <h3>Add Dependency (Spring Boot):</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
-{`<!-- Maven -->
+                {`<!-- Maven -->
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-security</artifactId>
 </dependency>`}
               </pre>
-              
+
               <h3>Basic Configuration:</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
-{`@Configuration
+                {`@Configuration
 @EnableWebSecurity
 public class CsrfConfig {
     @Bean
@@ -182,24 +182,24 @@ public class CsrfConfig {
             .csrf(csrf -> csrf
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
             );
-        
+
         return http.build();
     }
 }`}
               </pre>
-              
+
               <h3>Using CSRF Token in HTML:</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
-{`<form th:action="@{/api/secure-action}" method="post">
-    <input type="hidden" th:name="\${_csrf.parameterName}" th:value="\${_csrf.token}"/>
+                {`<form th:action="@{/api/secure-action}" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
     <!-- Form fields -->
 </form>`}
-</pre>
+              </pre>
             </div>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">CSRF vs Stateless APIs</h2>
+            <h2 className="text-2xl font-bold tracking-tight">CSRF vs Stateless APIs</h2>
             <table className="border-collapse border border-gray-300 dark:border-gray-700 w-full">
               <thead>
                 <tr className="bg-muted">
@@ -234,7 +234,7 @@ public class CsrfConfig {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Best Practices for CSRF Protection</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Best Practices for CSRF Protection</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -249,7 +249,7 @@ public class CsrfConfig {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Testing & Monitoring</CardTitle>
@@ -263,7 +263,7 @@ public class CsrfConfig {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>UI Considerations</CardTitle>
@@ -277,7 +277,7 @@ public class CsrfConfig {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>API & Mobile Apps</CardTitle>
@@ -297,14 +297,14 @@ public class CsrfConfig {
 
         <TabsContent value="examples" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Basic CSRF Configuration</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Basic CSRF Configuration</h2>
             <Card>
               <CardHeader>
                 <CardTitle>SecurityConfig.java</CardTitle>
               </CardHeader>
               <CardContent>
                 <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
-{`@Configuration
+                  {`@Configuration
 @EnableWebSecurity
 public class SecurityConfig {
     @Bean
@@ -316,7 +316,7 @@ public class SecurityConfig {
             .csrf(csrf -> csrf
                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
             );
-        
+
         return http.build();
     }
 }`}
@@ -326,14 +326,14 @@ public class SecurityConfig {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Disabling CSRF for Stateless APIs</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Disabling CSRF for Stateless APIs</h2>
             <Card>
               <CardHeader>
                 <CardTitle>SecurityConfig.java</CardTitle>
               </CardHeader>
               <CardContent>
                 <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm">
-{`@Configuration
+                  {`@Configuration
 @EnableWebSecurity
 public class StatelessSecurityConfig {
     @Bean
@@ -345,7 +345,7 @@ public class StatelessSecurityConfig {
                 .requestMatchers("/api/public/**").permitAll()
                 .anyRequest().authenticated()
             );
-        
+
         return http.build();
     }
 }`}
@@ -357,7 +357,7 @@ public class StatelessSecurityConfig {
 
         <TabsContent value="exercises" className="space-y-6">
           <section className="space-y-4">
-            <h2 className="text-2liner font-bold tracking-tight">Practice Exercises</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Practice Exercises</h2>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
@@ -367,13 +367,13 @@ public class StatelessSecurityConfig {
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Create Spring Boot app with Thymeleaf and Security</li>
-                    <li>Implement simple login form</li>
+                    <li>Implement a simple login form</li>
                     <li>Verify CSRF token is included in POST requests</li>
-                    <li>Try submitting form without token and verify rejection</li>
+                    <li>Try submitting the form without a token and verify rejection</li>
                   </ol>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 2: Secure API Endpoints</CardTitle>
@@ -382,23 +382,23 @@ public class StatelessSecurityConfig {
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
                     <li>Create REST API with secured POST endpoint</li>
-                    <li>Attempt to call API from external domain</li>
-                    <li>Add CSRF protection to API</li>
-                    <li>Include token in headers for successful call</li>
+                    <li>Attempt to call the API from an external domain</li>
+                    <li>Add CSRF protection to the API</li>
+                    <li>Include the token in headers for a successful call</li>
                   </ol>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 3: Custom CSRF Handling</CardTitle>
-                  <CardDescription>Advanced level</CardTitle>
+                  <CardDescription>Advanced level</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2">
-                    <li>Create custom CSRF token resolver</li>
+                    <li>Create a custom CSRF token resolver</li>
                     <li>Implement token storage in Redis</li>
-                    <li>Inject token into response headers</li>
+                    <li>Inject the token into response headers</li>
                     <li>Validate tokens across multiple instances</li>
                     <li>Support token rotation and invalidation</li>
                   </ol>
@@ -443,7 +443,7 @@ public class StatelessSecurityConfig {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Books</CardTitle>
@@ -475,7 +475,7 @@ public class StatelessSecurityConfig {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Articles & Tutorials</CardTitle>
@@ -507,7 +507,7 @@ public class StatelessSecurityConfig {
                   </ul>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle>Related Modules</CardTitle>
