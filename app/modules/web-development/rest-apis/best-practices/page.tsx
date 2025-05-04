@@ -369,7 +369,6 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
               <Card>
                 <CardHeader>
                   <CardTitle>Exercise 2: Pagination Support</CardTitle>
-                <CardHeader>
                   <CardTitle>Intermediate level</CardTitle>
                 </CardHeader>
                 <CardContent>
