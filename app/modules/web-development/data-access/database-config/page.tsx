@@ -6,6 +6,8 @@ import { BookOpen, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 export default function DatabaseConfigurationModule() {
+  const DB_PASSWORD="${DB_PASSWORD}";
+  
   return (
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
