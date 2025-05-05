@@ -6,6 +6,7 @@ import { BookOpen, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 export default function RestApiBestPracticesModule() {
+  const id = "{id}";
   return (
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
@@ -192,7 +193,7 @@ public class UserController {
         this.userService = service;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/${id}")
     public ResponseEntity<ApiResponse<User>> getUser(@PathVariable Long id) {
         User user = userService.findById(id);
         ApiResponse<User> response = new ApiResponse<>(true, user, "Success", 200);
