@@ -6,6 +6,7 @@ import { BookOpen, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 export default function RestRequestResponseModule() {
+  const id = "{id}";
   return (
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
@@ -67,7 +68,7 @@ export default function RestRequestResponseModule() {
                 <tr>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>@PathVariable</code></td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Extract data from URL path</td>
-                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>/api/users/{id}</code> → <code>@PathVariable Long id</code></td>
+                  <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>/api/users/${id}</code> → <code>@PathVariable Long id</code></td>
                 </tr>
                 <tr>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>@RequestParam</code></td>
@@ -172,7 +173,7 @@ public class UserController {
         this.userService = service;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/${id}")
     public UserResponse getUserById(@PathVariable Long id) {
         User user = userService.findById(id);
         return new UserResponse(user);
@@ -322,7 +323,7 @@ public class UserController {
         this.userService = service;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/${id}")
     public UserResponse getUserById(@PathVariable Long id) {
         User user = userService.findById(id);
         return new UserResponse(user);
