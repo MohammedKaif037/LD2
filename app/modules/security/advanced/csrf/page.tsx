@@ -6,7 +6,9 @@ import { BookOpen, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 export default function CsrfProtectionModule() {
-  return (
+  const csrfParam = "${_csrf.parameterName}";
+  const csrfToken = "${_csrf.token}";
+    return (
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
         <div className="flex flex-wrap items-center gap-2">
@@ -191,7 +193,7 @@ public class CsrfConfig {
               <h3>Using CSRF Token in HTML:</h3>
               <pre className="bg-muted p-4 rounded-md overflow-x-auto text-sm mt-2">
                 {`<form th:action="@{/api/secure-action}" method="post">
-    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <input type="hidden" th:name="${csrfParam}" th:value="${csrfToken}"/>
     <!-- Form fields -->
 </form>`}
               </pre>
