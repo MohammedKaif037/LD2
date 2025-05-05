@@ -6,6 +6,7 @@ import { BookOpen, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 export default function RestRequestMappingModule() {
+  const id = "{id}";
   return (
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
@@ -171,7 +172,7 @@ public class UserController {
         this.userService = service;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/${id}")
     public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
         User user = userService.findById(id);
         return ResponseEntity.ok(new UserResponse(user));
@@ -213,7 +214,7 @@ public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>Path Variables</code></td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Capture parts of URL as method arguments</td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">
-                    <code>@GetMapping("/{id}")</code>
+                    <code>@GetMapping("/${id}")</code>
                   </td>
                 </tr>
                 <tr>
@@ -329,7 +330,7 @@ public class UserController {
         this.userService = service;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/${id}")
     public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
         User user = userService.findById(id);
         return ResponseEntity.ok(new UserResponse(user));
@@ -341,7 +342,7 @@ public class UserController {
         return ResponseEntity.created(URI.create("/api/users/" + created.getId())).build();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/${id}")
     public ResponseEntity<Void> updateUser(
         @PathVariable Long id,
         @RequestBody UserRequest request) {
@@ -350,7 +351,7 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/${id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
         userService.delete(id);
         return ResponseEntity.noContent().build();
@@ -378,7 +379,7 @@ public class ProductController {
         this.productService = service;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/${id}")
     public ResponseEntity<ProductResponse> getProductById(@PathVariable String id) {
         Product product = productService.findById(id);
         return ResponseEntity.ok(new ProductResponse(product));
