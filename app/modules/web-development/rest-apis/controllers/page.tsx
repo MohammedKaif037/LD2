@@ -7,6 +7,7 @@ import Link from "next/link"
 
 export default function RestControllersModule() {
   return (
+    const id = `{id}`;
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
         <div className="flex flex-wrap items-center gap-2">
@@ -170,7 +171,7 @@ public class UserController {
         this.userService = service;
     }
 
-    @GetMapping("/{{id}}")
+    @GetMapping("/${id}")
     public ResponseEntity<UserResponse> getUser(@PathVariable Long id) {
         User user = userService.findById(id);
         return ResponseEntity.ok(new UserResponse(user));
@@ -189,7 +190,7 @@ public class ProductController {
         this.productService = service;
     }
 
-    @GetMapping("/{{id}}")
+    @GetMapping("/${id}")
     public Product getProduct(@PathVariable String id) {
         return productService.findById(id);
     }
@@ -215,7 +216,7 @@ public class ProductController {
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">
                     <code>GET /api/users</code>, 
                     <code>POST /api/users</code>,
-                    <code>PUT /api/users/{{id}}</code>
+                    <code>PUT /api/users/${id}</code>
                   </td>
                 </tr>
                 <tr>
@@ -324,7 +325,7 @@ public class UserController {
         this.userService = service;
     }
 
-    @GetMapping("/{{id}}")
+    @GetMapping("/${id}")
     public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
         User user = userService.findById(id);
         return ResponseEntity.ok(new UserResponse(user));
