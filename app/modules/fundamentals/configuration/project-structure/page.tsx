@@ -6,6 +6,7 @@ import { BookOpen, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 export default function ProjectStructure() {
+  const profile = "{profile}";
   return (
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
@@ -162,7 +163,7 @@ export default function ProjectStructure() {
 
               <h3>Best Practices:</h3>
               <ul>
-                <li>Use <code>application-{profile}.properties</code> for environment-specific settings</li>
+                <li>Use <code>application-${profile}.properties</code> for environment-specific settings</li>
                 <li>Keep sensitive data out of version control using <code>.gitignore</code></li>
                 <li>Organize large resource sets into subdirectories</li>
               </ul>
