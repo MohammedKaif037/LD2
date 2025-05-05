@@ -7,6 +7,8 @@ import Link from "next/link"
 
 export default function RestControllersModule() {
     const id = "{id}";
+    const userId = "${userId}";
+    const orderId = "{ordeeId}";
     return (
     <div className="flex flex-col gap-8">
       <div className="space-y-2">
@@ -223,7 +225,7 @@ public class ProductController {
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2"><code>Nested Resources</code></td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">Handle hierarchical relationships</td>
                   <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">
-                    <code>GET /api/users/{userId}/orders</code>
+                    <code>GET /api/users/${userId}/orders</code>
                   </td>
                 </tr>
                 <tr>
@@ -359,13 +361,13 @@ public class OrderController {
         this.orderService = service;
     }
 
-    @GetMapping("/user/{userId}")
+    @GetMapping("/user/${userId}")
     public ResponseEntity<List<OrderResponse>> getOrdersByUser(@PathVariable Long userId) {
         List<Order> orders = orderService.findByUser(userId);
         return ResponseEntity.ok(OrderResponse.from(orders));
     }
 
-    @PostMapping("/{orderId}/items")
+    @PostMapping("/${orderId}/items")
     public ResponseEntity<Void> addItemToOrder(
         @PathVariable Long orderId,
         @RequestBody ItemRequest itemRequest) {
