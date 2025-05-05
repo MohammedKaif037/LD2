@@ -229,7 +229,7 @@ public class HelloController {
                         <li>Spring Boot DevTools</li>
                       </ul>
                     </li>
-                    <li>Create a simple REST controller with endpoints for "hello" and "hello/{name}"</li>
+                    <li>Create a simple REST controller with endpoints for "hello" and "hello/name"</li>
                     <li>Run the application and test the endpoints</li>
                   </ol>
                 </CardContent>
